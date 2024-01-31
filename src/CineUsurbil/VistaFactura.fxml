@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField fx:id="hora" layoutX="56.0" layoutY="130.0" onAction="#Hora" prefHeight="26.0" prefWidth="63.0" />
+      <Label layoutX="29.0" layoutY="82.0" text="Nombre De La Pelicula :" />
+      <TextField layoutX="178.0" layoutY="78.0" />
+      <Label layoutX="69.0" layoutY="195.0" text="Sala  :" />
+      <TextField layoutX="179.0" layoutY="131.0" />
+      <TextField layoutX="179.0" layoutY="191.0" />
+      <Label layoutX="57.0" layoutY="255.0" text="Precio  :" />
+      <TextField layoutX="179.0" layoutY="250.0" />
+      <Label layoutX="38.0" layoutY="306.0" text="Descuentos   :" />
+      <TextField layoutX="179.0" layoutY="302.0" />
+      <Label layoutX="39.0" layoutY="348.0" text="Precio Total  :" />
+      <TextField layoutX="179.0" layoutY="344.0" />
+      <Button layoutX="412.0" layoutY="353.0" mnemonicParsing="false" onAction="#Salir" prefHeight="26.0" prefWidth="66.0" text="Salir" />
+      <Button layoutX="514.0" layoutY="353.0" mnemonicParsing="false" onAction="#Siguiente" text="Siguiente" />
+      <Label alignment="TOP_CENTER" layoutX="278.0" layoutY="19.0" text="Factura">
+         <font>
+            <Font name="System Italic" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
