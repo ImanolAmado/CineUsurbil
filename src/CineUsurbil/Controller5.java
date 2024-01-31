@@ -1,49 +1,46 @@
 package CineUsurbil;
 
- 
+import java.io.IOException;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 
 public class Controller5 {
 
     @FXML
-    private AnchorPane Registrarse;
+    private TextField descuento;
 
     @FXML
-    private TextField apellidos;
+    private TextField fecha;
 
     @FXML
-    private Button butonNoReg;
+    private TextField hora;
 
     @FXML
-    private Button butonReg;
+    private TextField nomPeli;
 
     @FXML
-    private TextField contraseña;
+    private TextField precio;
 
     @FXML
-    private TextField dni;
+    private TextField precioTotal;
 
     @FXML
-    private TextField email;
+    private TextField sala;
 
     @FXML
-    private TextField nombre;
-
-    @FXML
-    private TextField sexo;
-
-    @FXML
-    void NoReg(MouseEvent event) {
+    void Hora(ActionEvent event) throws IOException{
 
     }
 
     @FXML
-    void Regis(MouseEvent event) {
+    void Salir(ActionEvent event) throws IOException {
+
+    }
+
+    @FXML
+    void Siguiente(ActionEvent event) throws IOException{
 
     }
 

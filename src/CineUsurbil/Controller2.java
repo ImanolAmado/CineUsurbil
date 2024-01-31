@@ -1,10 +1,10 @@
-package Scenebuilder;
+package CineUsurbil;
 
 import java.io.IOException;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
@@ -24,6 +24,19 @@ public class Controller2 {
 
     @FXML
     private ImageView cine4;
+
+     @FXML
+    private Label nomCine1;
+
+    @FXML
+    private Label nomCine2;
+
+    @FXML
+    private Label nomCine3;
+
+    @FXML
+    private Label nomCine4;
+
 
     @FXML
     void c1(MouseEvent event) throws IOException {
