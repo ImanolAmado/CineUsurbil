@@ -1,4 +1,4 @@
-package Scenebuilder;
+package CineUsurbil;
 
 import java.io.IOException;
 
@@ -19,7 +19,7 @@ public class Controller4 {
         private DatePicker fecha;
         
         @FXML
-    void atras(ActionEvent event) throws IOException {
+        void atras(ActionEvent event) throws IOException {
         App.setRoot("vista1");
     }
 

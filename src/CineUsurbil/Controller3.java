@@ -1,4 +1,4 @@
-package Scenebuilder;
+package CineUsurbil;
 
 import java.io.IOException;
 
@@ -27,6 +27,7 @@ public class Controller3 {
         @FXML
         private ImageView pelicula5;
 
+        
         @FXML
     void atras(ActionEvent event) throws IOException {
         App.setRoot("vista4");
