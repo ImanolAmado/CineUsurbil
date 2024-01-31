@@ -28,10 +28,10 @@
             <Image url="@img.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="205.0" layoutY="283.0" text="Cine Zarautz" />
-      <Label layoutX="497.0" layoutY="283.0" text="Cine Orio" />
-      <Label layoutX="344.0" layoutY="283.0" text="Cine Donostia" />
-      <Label layoutX="60.0" layoutY="283.0" text="Cine Usurbil" />
+      <Label fx:id="nomCine2" layoutX="205.0" layoutY="283.0" text="Cine Zarautz" />
+      <Label fx:id="nomCine4" layoutX="497.0" layoutY="283.0" text="Cine Orio" />
+      <Label fx:id="nomCine3" layoutX="344.0" layoutY="283.0" text="Cine Donostia" />
+      <Label fx:id="nomCine1" layoutX="60.0" layoutY="283.0" text="Cine Usurbil" />
       <Button fx:id="botonFinalizar" layoutX="270.0" layoutY="361.0" mnemonicParsing="false" onAction="#finalizar" text="Finalizar" />
    </children>
 </AnchorPane>
