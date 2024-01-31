@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scenebuilder.Controller3">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CineUsurbil.Controller3">
    <children>
       <Label layoutX="53.0" layoutY="34.0" text="Nombre del cine esogido" />
       <ImageView fx:id="pelicula1" fitHeight="150.0" fitWidth="103.0" layoutX="14.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
