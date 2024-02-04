@@ -10,7 +10,7 @@ public class Sesion {
     private int hora;
 
     /*constructor*/
-    public Sesion(){
+    public Sesion(int codPelicula, int codSala, Entradas entrada, int fecha, int hora){
         this.codPelicula = codPelicula;
         this.codSala = codSala;
         this.entrada = new Entradas[1];

@@ -1,49 +1,44 @@
 package CineUsurbil;
+
+import javafx.beans.property.SimpleStringProperty;
+
 public class Cliente {
-    String dni;
-    String nombre;
-    String apellidos;
-    boolean sexo;
-    int contraseña;
+    private final SimpleStringProperty dni;
+    private final SimpleStringProperty nombre;
+    private final SimpleStringProperty apellidos;
+    private boolean sexo;
+    private int contraseña;
 
 
     public Cliente(String dni, String nombre , String apellidos , boolean sexo , int contraseña){
-    this.dni=dni;
-    this.nombre=nombre;
-    this.apellidos=apellidos;
-    this.sexo=sexo;
-    this.contraseña=contraseña;
+    this.dni = new SimpleStringProperty(dni);
+    this.nombre = new SimpleStringProperty(nombre);
+    this.apellidos = new SimpleStringProperty(apellidos);
+    this.sexo = sexo;
+    this.contraseña = contraseña;
 
     }
 
 
-    public String getDni() {
+    @Override
+    public String toString() {
+        return "Cliente [dni=" + dni + ", nombre=" + nombre + ", apellidos=" + apellidos + ", sexo=" + sexo
+                + ", contraseña=" + contraseña + "]";
+    }
+
+
+    public SimpleStringProperty getDni() {
         return dni;
     }
 
 
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
-
-
-    public String getNombre() {
+    public SimpleStringProperty getNombre() {
         return nombre;
     }
 
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-
-    public String getApellidos() {
+    public SimpleStringProperty getApellidos() {
         return apellidos;
-    }
-
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
     }
 
 
@@ -64,7 +59,6 @@ public class Cliente {
 
     public void setContraseña(int contraseña) {
         this.contraseña = contraseña;
-    }
-
+    }    
     
 }

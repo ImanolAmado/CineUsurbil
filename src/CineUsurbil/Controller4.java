@@ -7,29 +7,33 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
-
-public class Controller4 {
+import javafx.scene.text.Text;
+public class Controller4 {  
     
         @FXML
         private Button botonAtras;
     
         @FXML
         private Button botonFinalizar;
-
+    
+        @FXML
+        private DatePicker fecha;
+    
         @FXML
         private Label fehcaYnomPeli;
-
+    
         @FXML
-        private Label horaYpeliYsalaYprecio;
-
+        private Text horaYpeliYsalaYprecio;
+    
         @FXML
-        private Label horaYpeliYsalaYprecio2;
-
+        private Text horaYpeliYsalaYprecio2;
+    
         @FXML
         private Label nomCineYnomPeli;
     
         @FXML
-        private DatePicker fecha;
+        void finalizar(ActionEvent event) throws IOException{
+        }    
         
         @FXML
         void atras(ActionEvent event) throws IOException {

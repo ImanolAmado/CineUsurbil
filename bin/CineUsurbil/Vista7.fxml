@@ -6,26 +6,26 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="Registrarse" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="Registrarse" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CineUsurbil.Controller7">
    <children>
-      <Label layoutX="41.0" layoutY="84.0" prefHeight="18.0" prefWidth="103.0" text="Nombre" />
-      <Label layoutX="41.0" layoutY="171.0" text="DNI" />
-      <Label layoutX="38.0" layoutY="212.0" text="E-mail" />
-      <Label layoutX="37.0" layoutY="256.0" text="Sexo" />
-      <Label layoutX="35.0" layoutY="307.0" text="Contraseña" />
+      <Label layoutX="41.0" layoutY="77.0" prefHeight="18.0" prefWidth="60.0" text="Nombre:" />
+      <Label layoutX="41.0" layoutY="166.0" text="DNI:" />
+      <Label layoutX="38.0" layoutY="209.0" text="E-mail:" />
+      <Label layoutX="37.0" layoutY="252.0" text="Sexo:" />
+      <Label layoutX="34.0" layoutY="295.0" text="Contraseña:" />
       <TextField fx:id="nombre" layoutX="113.0" layoutY="76.0" />
       <TextField fx:id="apellidos" layoutX="113.0" layoutY="120.0" />
       <TextField fx:id="dni" layoutX="113.0" layoutY="163.0" />
       <TextField fx:id="email" layoutX="114.0" layoutY="206.0" />
       <TextField fx:id="sexo" layoutX="113.0" layoutY="250.0" />
-      <TextField fx:id="contraseña" layoutX="114.0" layoutY="300.0" />
+      <TextField fx:id="contraseña" layoutX="114.0" layoutY="291.0" />
       <Label layoutX="262.0" layoutY="20.0" text="Registrarse" textAlignment="CENTER">
          <font>
             <Font name="System Italic" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="39.0" layoutY="126.0" text="Apellidos" />
+      <Label layoutX="39.0" layoutY="121.0" text="Apellidos:" />
       <Button fx:id="NoReg" layoutX="331.0" layoutY="352.0" mnemonicParsing="false" onAction="#noreg" text="No Registrarse" />
-      <Button fx:id="Reg" layoutX="459.0" layoutY="352.0" mnemonicParsing="false" onAction="#registrar" prefHeight="30.0" prefWidth="103.0" text="Registrarse" />
+      <Button fx:id="Reg" layoutX="459.0" layoutY="352.0" mnemonicParsing="false" onAction="#registrar" prefHeight="18.0" prefWidth="103.0" text="Registrarse" />
    </children>
 </AnchorPane>

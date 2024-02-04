@@ -7,7 +7,7 @@ public class Cine {
     private Salas [] sala;
 
     /*constructor*/
-    public Cine(){
+    public Cine(int codCine, Salas sala){
         this.codCine = codCine;
         this.sala = new Salas[10];
     }
@@ -20,7 +20,6 @@ public class Cine {
     public int getCodCine() {
         return codCine;
     }
-
 
     public void setCodCine(int codCine) {
         this.codCine = codCine;
