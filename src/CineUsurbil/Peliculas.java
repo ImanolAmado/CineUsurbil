@@ -1,16 +1,18 @@
 package CineUsurbil;
 
+import javafx.beans.property.SimpleStringProperty;
+
 public class Peliculas {
     private int codPelicula;
     private double duracion;
-    private String genero;
+    private final SimpleStringProperty genero;
     private double coste;
 
     /*constructor*/
-    public Peliculas(){
+    public Peliculas(int codPelicula, double duracion, String genero, double coste){
         this.codPelicula = codPelicula;
         this.duracion = duracion;
-        this.genero = genero;
+        this.genero = new SimpleStringProperty(genero);
         this.coste = coste;
     }
 
@@ -36,12 +38,8 @@ public class Peliculas {
         this.duracion = duracion;
     }
 
-    public String getGenero() {
+    public SimpleStringProperty getGenero() {
         return genero;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
     }
 
     public double getCoste() {
@@ -51,4 +49,8 @@ public class Peliculas {
     public void setCoste(double coste) {
         this.coste = coste;
     }
+
+   
+
+   
 }

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CineUsurbil.Controller5">
    <children>
       <TextField fx:id="hora" layoutX="92.0" layoutY="130.0" onAction="#Hora" prefHeight="26.0" prefWidth="63.0" />
       <Label fx:id="nomPeli" layoutX="29.0" layoutY="82.0" text="Nombre De La Pelicula :" />

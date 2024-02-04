@@ -1,5 +1,7 @@
 package CineUsurbil;
 
+import java.io.IOException;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -28,12 +30,12 @@ public class Controller6 {
     }
 
     @FXML
-    void Registrarse(MouseEvent event) {
+    void Registrarse(MouseEvent event) throws IOException{
 
     }
 
     @FXML
-    void login(MouseEvent event) {
+    void login(MouseEvent event) throws IOException{
 
     }
 

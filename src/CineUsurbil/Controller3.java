@@ -8,9 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 
-public class Controller3 {
-    
-        
+public class Controller3 {        
     @FXML
     private Button botonAtras;
 
@@ -25,9 +23,8 @@ public class Controller3 {
 
     @FXML
     void atras(ActionEvent event) throws IOException{
+        App.setRoot("vista2");
 
     }
-
-
     
 }
