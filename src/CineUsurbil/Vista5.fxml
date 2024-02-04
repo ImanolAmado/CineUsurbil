@@ -20,8 +20,8 @@
       <TextField fx:id="descuento" layoutX="179.0" layoutY="295.0" />
       <Label layoutX="39.0" layoutY="351.0" text="Precio Total  :" />
       <TextField fx:id="precioTotal" layoutX="179.0" layoutY="347.0" />
-      <Button layoutX="412.0" layoutY="353.0" mnemonicParsing="false" onAction="#Salir" prefHeight="26.0" prefWidth="66.0" text="Salir" />
-      <Button layoutX="514.0" layoutY="353.0" mnemonicParsing="false" onAction="#Siguiente" text="Siguiente" />
+      <Button fx:id="salir" layoutX="412.0" layoutY="353.0" mnemonicParsing="false" onAction="#Salir" prefHeight="26.0" prefWidth="66.0" text="Salir" />
+      <Button fx:id="siguiente" layoutX="514.0" layoutY="353.0" mnemonicParsing="false" onAction="#Siguiente" text="Siguiente" />
       <Label alignment="TOP_CENTER" layoutX="278.0" layoutY="19.0" text="Factura">
          <font>
             <Font name="System Italic" size="20.0" />
