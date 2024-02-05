@@ -27,10 +27,8 @@ public class Controller2 {
     @FXML
     private ImageView cine3;
 
+    
     @FXML
-    private ImageView cine4;
-
-     @FXML
     private Label nomCine1;
 
     @FXML
@@ -39,9 +37,7 @@ public class Controller2 {
     @FXML
     private Label nomCine3;
 
-    @FXML
-    private Label nomCine4;
-
+   
 
     @FXML
     void finalizar(ActionEvent event) throws IOException {
@@ -78,11 +74,7 @@ public class Controller2 {
         App.setRoot("vista3");
     }
 
-    @FXML
-     void c4(MouseEvent event) throws IOException {
-        App.setRoot("vista3");    
-    }
-
+   
 
 }
 
