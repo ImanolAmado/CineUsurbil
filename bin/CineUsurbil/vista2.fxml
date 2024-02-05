@@ -6,33 +6,26 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" 
-xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CineUsurbil.Controller2">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CineUsurbil.Controller2">
    <children>
-      <ImageView fx:id="cine1" fitHeight="157.0" fitWidth="110.0" layoutX="37.0" layoutY="89.0" onMouseClicked="#c1" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="cine1" fitHeight="188.0" fitWidth="251.0" layoutX="27.0" layoutY="30.0" onDragDetected="#c1" onMouseClicked="#c1" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img.jpg" />
+            <Image url="@donostia.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="cine2" fitHeight="190.0" fitWidth="110.0" layoutX="183.0" layoutY="89.0" onDragDetected="#c2" onMouseClicked="#c2" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="cine3" fitHeight="153.0" fitWidth="209.0" layoutX="196.0" layoutY="214.0" onDragDetected="#c3" onMouseClicked="#c3" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img.jpg" />
+            <Image url="@zarautz.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="cine3" fitHeight="190.0" fitWidth="110.0" layoutX="326.0" layoutY="89.0" onDragDetected="#c3" onMouseClicked="#c3" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="cine2" fitHeight="141.0" fitWidth="209.0" layoutX="366.0" layoutY="30.0" onDragDetected="#c2" onMouseClicked="#c2" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img.jpg" />
+            <Image url="@usurbil.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="cine4" fitHeight="190.0" fitWidth="110.0" layoutX="467.0" layoutY="89.0" onDragDetected="#c4" onMouseClicked="#c4" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@img.jpg" />
-         </image>
-      </ImageView>
-      <Label fx:id="nomCine2" layoutX="205.0" layoutY="283.0" text="Cine Zarautz" />
-      <Label fx:id="nomCine4" layoutX="497.0" layoutY="283.0" text="Cine Orio" />
-      <Label fx:id="nomCine3" layoutX="344.0" layoutY="283.0" text="Cine Donostia" />
-      <Label fx:id="nomCine1" layoutX="60.0" layoutY="283.0" text="Cine Usurbil" />
-      <Button fx:id="botonFinalizar" layoutX="270.0" layoutY="361.0" mnemonicParsing="false" onAction="#finalizar" text="Finalizar" />
+      <Label layoutX="108.0" layoutY="182.0" text="Cine Donostia" />
+      <Label layoutX="428.0" layoutY="182.0" text="Cine Lasarte" />
+      <Label layoutX="264.0" layoutY="351.0" text="Cine Andoain" />
+      <Button fx:id="botonFinalizar" layoutX="514.0" layoutY="360.0" mnemonicParsing="false" onAction="#finalizar" text="Finalizar" />
    </children>
 </AnchorPane>
