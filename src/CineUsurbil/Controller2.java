@@ -1,22 +1,15 @@
 package CineUsurbil;
 
 import java.io.IOException;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 
-public class Controller2 {
-
-    private Cine cine;
-
+public class Controller2  {
+   
     @FXML
     private Button botonFinalizar;
 
@@ -28,26 +21,32 @@ public class Controller2 {
 
     @FXML
     private ImageView cine3;
-
-
-    @FXML
-    void finalizar(ActionEvent event) throws IOException {       
-        App.setRoot("vista1");   }
+    
  
     @FXML
     void c1(MouseEvent event) throws IOException {
-        App.setRoot("vista3");
+        App.setRoot("vista3", 1);
+       
     }
+
     @FXML
     void c2(MouseEvent event) throws IOException {
-        App.setRoot("vista3");
+        App.setRoot("vista3",2);
+       
+
     }
     @FXML
     void c3(MouseEvent event) throws IOException {
-        App.setRoot("vista3");
+        App.setRoot("vista3",3);
+       
     }
 
+    @FXML
+    void finalizar(ActionEvent event) throws IOException {       
+        App.setRoot("vista1");   
+    }
 
+    
 }
 
 

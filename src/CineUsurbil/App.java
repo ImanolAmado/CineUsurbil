@@ -10,7 +10,10 @@ import javafx.stage.Stage;
 public class App extends Application {
 
     private static Scene scene;
-    public static Cine model;
+
+// Creamos variable estática int que va a representar el código cine.
+
+    private static int codigoCine;
 
     @Override
     public void start(Stage stage) throws IOException {      
@@ -23,15 +26,28 @@ public class App extends Application {
 
     static void setRoot (String fxml) throws IOException{
         scene.setRoot(loadFXML(fxml));
+       
+    }   
+
+// En los "setRoot" de controlador2, al pulsar en la imágen del cine,
+// enviamos un int como parámetro correspondiente al código de cine.
+// En este método, asignamos el valor que recibimos a la variable privada
+// estática que hemos definido un poco más arriba.
+// Después, en el controlador3 usaremos el "getter" para acceder a dicha variable.
+
+    static void setRoot (String fxml, int codigoCine) throws IOException{
+        scene.setRoot(loadFXML(fxml));
+        App.codigoCine = codigoCine;
+    }   
+
+// Getter del código cine. En el controlador2 enviamos como parámetro
+    public static int getCodigoCine() {
+        return codigoCine;
     }
 
     static void setRoot(Parent fxml) throws IOException {
         scene.setRoot(fxml);
-    }
-
-    public static Cine getModel(){
-        return model;
-    }
+    }   
 
     private static FXMLLoader FXMLLoader(String fxml){
         return new FXMLLoader(App.class.getResource(fxml + ".fxml"));
