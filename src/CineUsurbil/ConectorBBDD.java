@@ -24,7 +24,7 @@ public class ConectorBBDD {
 
         while (rs.next()){
 
-            
+        // METER EL RESULTADO EN UN ARRAY DE PELICULAS
             System.out.println(rs.getString(1));
         }
 

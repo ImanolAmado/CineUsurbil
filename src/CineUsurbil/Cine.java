@@ -6,12 +6,25 @@ public class Cine {
     private int codCine;
     private Salas [] sala;
 
-    /*constructor*/
-    public Cine(int codCine, Salas sala){
+    /*constructor*/    
+  
+    public Cine(int codCine, Salas[] sala){
         this.codCine = codCine;
-        this.sala = new Salas[10];
+        this.sala = sala;       
     }
+
     
+    public Cine(){          
+
+    }   
+
+    public Cine(int codCine){
+
+        this.codCine = codCine;
+        this.sala = new Salas[4];        
+    }
+
+
     @Override
     public String toString() {
         return "Cine [codCine=" + codCine + ", sala=" + Arrays.toString(sala) + "]";

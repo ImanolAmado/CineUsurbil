@@ -6,7 +6,8 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CineUsurbil.Controller2">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" 
+xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CineUsurbil.Controller2">
    <children>
       <ImageView fx:id="cine1" fitHeight="157.0" fitWidth="110.0" layoutX="37.0" layoutY="89.0" onMouseClicked="#c1" pickOnBounds="true" preserveRatio="true">
          <image>

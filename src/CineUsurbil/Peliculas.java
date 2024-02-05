@@ -16,6 +16,8 @@ public class Peliculas {
         this.coste = coste;
     }
 
+    
+
     @Override
     public String toString() {
         return "Peliculas [codPelicula=" + codPelicula + ", duracion=" + duracion + ", genero=" + genero + ", coste="

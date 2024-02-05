@@ -16,6 +16,11 @@ public class Salas {
         this.coste = coste;
     }
 
+  // public Salas(){
+
+   //}
+
+   
     @Override
     public String toString() {
         return "Salas [codSala=" + codSala + ", nombre=" + nombre + ", genero=" + genero + ", coste=" + coste + "]";
