@@ -13,6 +13,8 @@ public class Cine {
         this.sala = sala;       
     }
 
+    /*hfrehfkerkerhfk */
+
     
     public Cine(){          
 
