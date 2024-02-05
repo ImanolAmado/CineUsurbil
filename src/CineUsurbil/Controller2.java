@@ -1,6 +1,7 @@
 package CineUsurbil;
 
 import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+
 
 public class Controller2 {
 
@@ -27,17 +29,6 @@ public class Controller2 {
     @FXML
     private ImageView cine3;
 
-    
-    @FXML
-    private Label nomCine1;
-
-    @FXML
-    private Label nomCine2;
-
-    @FXML
-    private Label nomCine3;
-
-   
 
     @FXML
     void finalizar(ActionEvent event) throws IOException {
@@ -74,7 +65,6 @@ public class Controller2 {
         App.setRoot("vista3");
     }
 
-   
 
 }
 
