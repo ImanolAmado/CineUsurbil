@@ -16,7 +16,7 @@ public class Salas {
         this.coste = coste;
     }
 
-  // public Salas(){
+   //public Salas(){
 
    //}
 

@@ -31,27 +31,9 @@ public class Controller2 {
 
 
     @FXML
-    void finalizar(ActionEvent event) throws IOException {
-       /* FXMLLoader loader = new FXMLLoader(getClass().getResource("vista1.fxml"));
-        Parent parent = loader.load();
-        Controller1 controller = loader.getController();
-        controller.cargarModelo(cine);
-        Scene s = ((Button) event.getSource()).getScene();
-        s.setRoot(parent); */
-        App.setRoot("vista1");
-
-    }
-
-
-    void cargarModelo(Cine cargaCine) {
-        if (cine == null && cargaCine == null) {
-            this.cine = new Cine();
-        } else {
-            this.cine = cargaCine;
-        }
-    }
-  
-
+    void finalizar(ActionEvent event) throws IOException {       
+        App.setRoot("vista1");   }
+ 
     @FXML
     void c1(MouseEvent event) throws IOException {
         App.setRoot("vista3");

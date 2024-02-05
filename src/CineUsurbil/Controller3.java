@@ -1,6 +1,7 @@
 package CineUsurbil;
 
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,5 +27,11 @@ public class Controller3 {
         App.setRoot("vista2");
 
     }
+
+  //  @FXML
+   // public void initialize(URL location, ResourceBundle resources) {
+
+
+  //  }
     
 }
