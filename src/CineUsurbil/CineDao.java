@@ -33,6 +33,5 @@ public class CineDao {
 		c.close();
 		return cines;
 	}
- 
 
 }
