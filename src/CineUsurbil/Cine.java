@@ -26,11 +26,11 @@ public class Cine {
         return "Cine [codCine=" + codCine + ", sala=" + Arrays.toString(sala) + "]";
     }
 
-    public int getCodCine() {
+    public String getCodCine() {
         return codCine.get();
     }
 
-    public void setCodCine(int codCine) {
+    public void setCodCine(String codCine) {
         this.codCine.set(codCine);
     }
 
