@@ -2,20 +2,22 @@ package CineUsurbil;
 
 import java.util.Arrays;
 
+import javafx.beans.property.SimpleIntegerProperty;
+
 public class Sesion {
-    private int codPelicula;
-    private int codSala;
+    private SimpleIntegerProperty codPelicula;
+    private SimpleIntegerProperty codSala;
     private Entradas [] entrada;
-    private int fecha;
-    private int hora;
+    private SimpleIntegerProperty fecha;
+    private SimpleIntegerProperty hora;
 
     /*constructor*/
     public Sesion(int codPelicula, int codSala, Entradas entrada, int fecha, int hora){
-        this.codPelicula = codPelicula;
-        this.codSala = codSala;
+        this.codPelicula = new SimpleIntegerProperty(codPelicula);
+        this.codSala = new SimpleIntegerProperty(codSala);
         this.entrada = new Entradas[1];
-        this.fecha = fecha;
-        this.hora = hora;
+        this.fecha = new SimpleIntegerProperty(fecha);
+        this.hora = new SimpleIntegerProperty(hora);
     }
 
     @Override
@@ -25,19 +27,19 @@ public class Sesion {
     }
 
     public int getCodPelicula() {
-        return codPelicula;
+        return codPelicula.get();
     }
 
     public void setCodPelicula(int codPelicula) {
-        this.codPelicula = codPelicula;
+        this.codPelicula.set(codPelicula);
     }
 
     public int getCodSala() {
-        return codSala;
+        return codSala.get();
     }
 
     public void setCodSala(int codSala) {
-        this.codSala = codSala;
+        this.codSala.set(codSala);
     }
 
     public Entradas[] getEntrada() {
@@ -49,19 +51,19 @@ public class Sesion {
     }
 
     public int getFecha() {
-        return fecha;
+        return fecha.get();
     }
 
     public void setFecha(int fecha) {
-        this.fecha = fecha;
+        this.fecha.set(fecha);
     }
 
     public int getHora() {
-        return hora;
+        return hora.get();
     }
 
     public void setHora(int hora) {
-        this.hora = hora;
+        this.hora.set(hora);
     }
 
 }
