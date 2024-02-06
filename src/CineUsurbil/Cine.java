@@ -2,32 +2,25 @@ package CineUsurbil;
 
 import java.util.Arrays;
 
-import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 
 public class Cine {
-    private SimpleIntegerProperty codCine;
+    private SimpleStringProperty codCine;
     private Salas [] sala;
 
     /*constructor*/    
   
-    public Cine(int codCine, Salas[] sala){
-        this.codCine = new SimpleIntegerProperty(codCine);
+    public Cine(String codCine, Salas[] sala){
+        this.codCine = new SimpleStringProperty(codCine);
         this.sala = sala;       
     }
 
         
     public Cine(String codCine){
-        this.codCine = codCine;        
-
+        this.codCine = new SimpleStringProperty(codCine);
     }   
 
-    /* public Cine(int codCine){
-
-        this.codCine = codCine;
-        this.sala = new Salas[4];        
-    }
- */
-
+    
     @Override
     public String toString() {
         return "Cine [codCine=" + codCine + ", sala=" + Arrays.toString(sala) + "]";
