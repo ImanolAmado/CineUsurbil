@@ -1,19 +1,21 @@
 package CineUsurbil;
 
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Salas {
-    private int codSala;
-    private final SimpleStringProperty nombre;
-    private final SimpleStringProperty genero;
-    private double coste;
+    private SimpleIntegerProperty codSala;
+    private SimpleStringProperty nombre;
+    private SimpleStringProperty genero;
+    private SimpleDoubleProperty coste;
 
     /*constructor*/
     public Salas(int codSala, String nombre, String genero, double coste){
-        this.codSala = codSala;
+        this.codSala = new SimpleIntegerProperty(codSala);
         this.nombre = new SimpleStringProperty(nombre);
         this.genero = new SimpleStringProperty(genero);
-        this.coste = coste;
+        this.coste = new SimpleDoubleProperty(coste);
     }
 
   // public Salas(){
@@ -27,27 +29,35 @@ public class Salas {
     }
 
     public int getCodSala() {
-        return codSala;
+        return codSala.get();
     }
 
     public void setCodSala(int codSala) {
-        this.codSala = codSala;
+        this.codSala.set(codSala);
     }
 
-    public SimpleStringProperty getNombre() {
-        return nombre;
+    public String getNombre() {
+        return nombre.get();
     }
 
-    public SimpleStringProperty getGenero() {
-        return genero;
+    public void setNombre(String nombre){
+        this.nombre.set(nombre);
+    }
+
+    public String getGenero() {
+        return genero.get();
+    }
+
+    public void setGenero(String genero){
+        this.genero.set(genero);
     }
 
     public double getCoste() {
-        return coste;
+        return coste.get();//está bien?
     }
 
     public void setCoste(double coste) {
-        this.coste = coste;
+        this.coste.set(coste);
     }
 
 

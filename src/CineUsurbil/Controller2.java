@@ -63,7 +63,7 @@ public class Controller2 {
     @FXML
     void c3(MouseEvent event) throws IOException {
         App.setRoot("vista3");
-    }
+    }   
 
 
 }
