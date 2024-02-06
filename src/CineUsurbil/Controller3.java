@@ -1,14 +1,17 @@
 package CineUsurbil;
 
 import java.io.IOException;
-
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 
-public class Controller3 {        
+
+public class Controller3 implements Initializable{        
     @FXML
     private Button botonAtras;
 
@@ -26,5 +29,16 @@ public class Controller3 {
         App.setRoot("vista2");
 
     }
+
+
+
+   @FXML
+  public void initialize(URL location, ResourceBundle resources) {
+
+
+    }
+    
+
+
     
 }

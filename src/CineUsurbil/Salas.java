@@ -18,7 +18,7 @@ public class Salas {
         this.coste = new SimpleDoubleProperty(coste);
     }
 
-  // public Salas(){
+   //public Salas(){
 
    //}
 
