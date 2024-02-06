@@ -25,13 +25,13 @@ public class Controller2  {
  
     @FXML
     void c1(MouseEvent event) throws IOException {
-        App.setRoot("vista3", 1);
+        App.setRoot("vista3");
        
     }
 
     @FXML
     void c2(MouseEvent event) throws IOException {
-        App.setRoot("vista3",2);
+        App.setRoot("vista3");
        
 
     }
