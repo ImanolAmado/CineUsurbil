@@ -2,8 +2,6 @@ package CineUsurbil;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ConectorBBDD {
@@ -12,24 +10,20 @@ public class ConectorBBDD {
     final static String user = "root";
     final static String pass = "Imaite2901?";
 
-    public static Peliculas[] conectar(String sql) throws SQLException {
-
-        Peliculas[] peliculas = null;
-
-        Connection conn = DriverManager.getConnection(url, user, pass);
-        PreparedStatement ps = conn.prepareStatement(sql);
-        ResultSet rs = ps.executeQuery();
-
-        while (rs.next()) {
-
-            // METER EL RESULTADO EN UN ARRAY DE PELICULAS
-            System.out.println(rs.getString("nombre"));
-        }
-
-        rs.close();
-        ps.close();
-        conn.close();
-
-        return peliculas;
+    public static Connection conectar() {
+       
+        try {
+			Connection connection = DriverManager.getConnection(url, user, pass);
+			return connection;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e){
+			e.printStackTrace();
+		}
+		return null;
     }
+    public static CineDao getCineDao() {
+        CineDao cineDao=new CineDao();
+		return cineDao;
+	}
 }
