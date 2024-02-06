@@ -41,14 +41,8 @@ public class Controller3 implements Initializable{
 
     String sql = "select nombre from cine where codCine=\"" + codCine +"\"";
     System.out.println(sql);
-    Peliculas[] peliculas = null;
+    
 
-    try {
-        peliculas= ConectorBBDD.conectar(sql);
-    } catch (SQLException e) {
-        // TODO Auto-generated catch block
-        e.printStackTrace();
-    }
 
     }
         

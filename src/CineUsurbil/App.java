@@ -21,7 +21,7 @@ public class App extends Application {
 
     public static Cine getCine() {
         return cine;
-    }
+    } 
 
    
     @Override
