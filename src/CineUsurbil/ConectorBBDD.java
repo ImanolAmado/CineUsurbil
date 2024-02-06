@@ -22,8 +22,10 @@ public class ConectorBBDD {
 		}
 		return null;
     }
+
+	
     public static CineDao getCineDao() {
-        CineDao cineDao=new CineDao();
+        CineDao cineDao = new CineDao();
 		return cineDao;
 	}
 }

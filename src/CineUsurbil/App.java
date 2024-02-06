@@ -11,22 +11,10 @@ public class App extends Application {
 
     private static Scene scene;
 
-// Creamos una variable estática que contiene instancia de Cine.
-    private static Cine cine;
 
-// Getter y Setter
-    public static void setCine(Cine cine) {
-        App.cine = cine;
-    }
-
-    public static Cine getCine() {
-        return cine;
-    } 
-
-   
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("vista1"));
+        scene = new Scene(loadFXML("vista1"));        
         stage.setTitle("Cine Usurbil");
         stage.setScene(scene);
         stage.show();
@@ -34,7 +22,6 @@ public class App extends Application {
 
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
-
     }    
 
     static void setRoot(Parent fxml) throws IOException {

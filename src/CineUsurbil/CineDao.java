@@ -8,11 +8,15 @@ import java.sql.SQLException;
 
 public class CineDao {
 
+	// Sentencia SQL
 	private static final String
 	ALL = "SELECT * FROM cine";
 
-    //lee todos lo cines
-	public Cine[] leeTodos() throws SQLException {
+    // Lee todos los cines de la BBDD y devuelve el nombre de los
+	// mismos en un array de Cine. Lo usamos para sacar en pantalla
+	// los nombres de los cines en la "vista2".
+
+	public Cine[] leerCines() throws SQLException {
 		Cine[] cines = new Cine[10];
         int i = 0;		
 		Connection c = ConectorBBDD.conectar();
