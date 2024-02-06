@@ -3,26 +3,21 @@ package CineUsurbil;
 import java.util.Arrays;
 
 public class Cine {
-    private int codCine;
+    private String codCine;
     private Salas [] sala;
 
     /*constructor*/    
   
-    public Cine(int codCine, Salas[] sala){
+    public Cine(String codCine, Salas[] sala){
         this.codCine = codCine;
         this.sala = sala;       
     }
 
         
-    public Cine(){          
+    public Cine(String codCine){
+        this.codCine = codCine;        
 
-    }   
-
-    public Cine(int codCine){
-
-        this.codCine = codCine;
-        this.sala = new Salas[4];        
-    }
+    }    
 
 
     @Override
@@ -30,11 +25,11 @@ public class Cine {
         return "Cine [codCine=" + codCine + ", sala=" + Arrays.toString(sala) + "]";
     }
 
-    public int getCodCine() {
+    public String getCodCine() {
         return codCine;
     }
 
-    public void setCodCine(int codCine) {
+    public void setCodCine(String codCine) {
         this.codCine = codCine;
     }
 

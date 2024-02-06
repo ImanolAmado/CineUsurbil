@@ -2,6 +2,7 @@ package CineUsurbil;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -30,15 +31,25 @@ public class Controller3 implements Initializable{
 
     }
 
-
-
    @FXML
-  public void initialize(URL location, ResourceBundle resources) {
+   public void initialize(URL location, ResourceBundle resources) {
 
+    Cine cine = App.getCine();
+    String codCine = cine.getCodCine();   
+
+    System.out.println(codCine);
+
+    String sql = "select nombre from cine where codCine=\"" + codCine +"\"";
+    System.out.println(sql);
+    Peliculas[] peliculas = null;
+
+    try {
+        peliculas= ConectorBBDD.conectar(sql);
+    } catch (SQLException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
 
     }
-    
-
-
-    
+        
 }

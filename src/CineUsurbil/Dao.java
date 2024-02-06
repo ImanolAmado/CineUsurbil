@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class Dao {
     private static String url = "jdbc:mysql://127.0.0.1:3306/";
-	private static String database = "departamentos";
+	private static String database = "cineusurbil";
 	private static String user = "test";
 	private static String password = "pass";
 
@@ -22,9 +22,10 @@ public class Dao {
 		return null;
 	}
 
-	public static CineDao getCineDao() {
-		return new CineDao();
-	}
+	//public static CineDao getCineDao() {
+	
+	//	return new CineDao();
+	//}
 
 	
 }

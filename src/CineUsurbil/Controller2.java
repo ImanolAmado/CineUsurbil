@@ -25,19 +25,25 @@ public class Controller2  {
  
     @FXML
     void c1(MouseEvent event) throws IOException {
-        App.setRoot("vista3", 1);
+        Cine donostia = new Cine ("CiDon");
+        App.setCine(donostia);
+        App.setRoot("vista3");
        
     }
 
     @FXML
     void c2(MouseEvent event) throws IOException {
-        App.setRoot("vista3",2);
+        Cine lasarte = new Cine ("CiLas");
+        App.setCine(lasarte);
+        App.setRoot("vista3");
        
 
     }
     @FXML
     void c3(MouseEvent event) throws IOException {
-        App.setRoot("vista3",3);
+        Cine andoain = new Cine ("CiAnd");
+        App.setCine(andoain);
+        App.setRoot("vista3");
        
     }
 
