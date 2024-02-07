@@ -47,7 +47,7 @@ public class Controller2 implements Initializable {
 
     @FXML
     void c2(MouseEvent event) throws IOException {
-          App.setCine(cines[2]);
+        App.setCine(cines[2]);
         App.setRoot("vista3");   
 
     }

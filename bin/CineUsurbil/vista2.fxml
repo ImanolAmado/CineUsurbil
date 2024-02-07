@@ -23,9 +23,9 @@
             <Image url="@usurbil.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="108.0" layoutY="182.0" text="Cine Donostia" />
-      <Label layoutX="428.0" layoutY="182.0" text="Cine Lasarte" />
-      <Label layoutX="264.0" layoutY="351.0" text="Cine Andoain" />
+      <Label fx:id="donostia" layoutX="99.0" layoutY="182.0" />
+      <Label fx:id="lasarte" layoutX="428.0" layoutY="182.0" />
+      <Label fx:id="andoain" layoutX="264.0" layoutY="351.0" />
       <Button fx:id="botonFinalizar" layoutX="514.0" layoutY="360.0" mnemonicParsing="false" onAction="#finalizar" text="Finalizar" />
    </children>
 </AnchorPane>
