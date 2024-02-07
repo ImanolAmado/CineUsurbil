@@ -5,6 +5,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Cliente {
+
     private SimpleStringProperty dni;
     private SimpleStringProperty nombre;
     private SimpleStringProperty apellidos;
@@ -18,7 +19,6 @@ public class Cliente {
     this.apellidos = new SimpleStringProperty(apellidos);
     this.sexo = new SimpleBooleanProperty(sexo);
     this.contraseña = new SimpleIntegerProperty(contraseña);
-
     }
 
 

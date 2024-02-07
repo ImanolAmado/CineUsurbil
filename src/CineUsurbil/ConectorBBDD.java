@@ -7,8 +7,8 @@ import java.sql.SQLException;
 public class ConectorBBDD {
 
     final static String url = "jdbc:mysql://localhost:3306/cineusurbil";
-    final static String user = "root";
-    final static String pass = "Imaite2901?";
+    final static String user = "test";
+    final static String pass = "pass";
 
     public static Connection conectar() {
        
@@ -22,8 +22,18 @@ public class ConectorBBDD {
 		}
 		return null;
     }
+
+
+// Getters para los DAO
+		
     public static CineDao getCineDao() {
-        CineDao cineDao=new CineDao();
+        CineDao cineDao = new CineDao();
 		return cineDao;
 	}
+
+	public static SalaDao getSalaDao() {
+        SalaDao salaDao = new SalaDao();
+		return salaDao;
+	}
+	
 }

@@ -1,29 +1,45 @@
 package CineUsurbil;
 
 import java.util.Arrays;
-
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 
 public class Sesion {
+
+    private SimpleStringProperty codCine;
     private SimpleIntegerProperty codPelicula;
-    private SimpleIntegerProperty codSala;
+    private SimpleStringProperty codSala;
     private Entradas [] entrada;
     private SimpleIntegerProperty fecha;
     private SimpleIntegerProperty hora;
 
-    /*constructor*/
-    public Sesion(int codPelicula, int codSala, Entradas entrada, int fecha, int hora){
+    // Constructores
+
+    public Sesion(String codCine, int codPelicula, String codSala, Entradas entrada, int fecha, int hora){
+        this.codCine = new SimpleStringProperty(codCine);
         this.codPelicula = new SimpleIntegerProperty(codPelicula);
-        this.codSala = new SimpleIntegerProperty(codSala);
+        this.codSala = new SimpleStringProperty(codSala);
         this.entrada = new Entradas[1];
         this.fecha = new SimpleIntegerProperty(fecha);
         this.hora = new SimpleIntegerProperty(hora);
     }
 
+   
+
     @Override
     public String toString() {
         return "Sesion [codPelicula=" + codPelicula + ", codSala=" + codSala + ", entrada=" + Arrays.toString(entrada)
                 + ", fecha=" + fecha + ", hora=" + hora + "]";
+    }
+
+           
+    
+    public String getCodCine() {
+        return codCine.get();
+    }
+
+    public void setCodCine(String codCine) {
+        this.codCine.set(codCine);
     }
 
     public int getCodPelicula() {
@@ -34,11 +50,11 @@ public class Sesion {
         this.codPelicula.set(codPelicula);
     }
 
-    public int getCodSala() {
+    public String getCodSala() {
         return codSala.get();
     }
 
-    public void setCodSala(int codSala) {
+    public void setCodSala(String codSala) {
         this.codSala.set(codSala);
     }
 
