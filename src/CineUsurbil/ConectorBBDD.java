@@ -23,9 +23,17 @@ public class ConectorBBDD {
 		return null;
     }
 
-	
+
+// Getters para los DAO
+		
     public static CineDao getCineDao() {
         CineDao cineDao = new CineDao();
 		return cineDao;
 	}
+
+	public static SalaDao getSalaDao() {
+        SalaDao salaDao = new SalaDao();
+		return salaDao;
+	}
+	
 }

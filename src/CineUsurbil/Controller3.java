@@ -2,6 +2,7 @@ package CineUsurbil;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
@@ -12,13 +13,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.util.Duration;
 
-public class Controller3 implements Initializable {
-    
+
+public class Controller3 implements Initializable {    
 
 // Creamos variable "codCine" y un constructor para asignarle el
 // valor que recibimos de "controller2".
 
     private String codCine;
+    private Sala[] salas;
 
     public void cargarCodCine(String codCine) {
         this.codCine = codCine;
@@ -53,6 +55,15 @@ public class Controller3 implements Initializable {
         pause.setOnFinished(event -> {
 
             System.out.println(codCine);
+
+            SalaDao salaDao = ConectorBBDD.getSalaDao();
+
+            try {
+                salas = salaDao.leerSalas(codCine);
+            } catch (SQLException e) {
+                System.out.println("Error! Excepción SQL");
+                e.printStackTrace();
+            }
 
         });
         pause.play();
