@@ -55,7 +55,7 @@ public class Controller3 implements Initializable {
         pause.setOnFinished(event -> {
 
             System.out.println(codCine);
-
+            
             SalaDao salaDao = ConectorBBDD.getSalaDao();
 
             try {
