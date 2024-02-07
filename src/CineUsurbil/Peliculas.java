@@ -6,18 +6,29 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class Peliculas {
     private SimpleIntegerProperty codPelicula;
-    private SimpleDoubleProperty duracion;
+    private SimpleStringProperty titulo;
+    private SimpleStringProperty duracion;
     private SimpleStringProperty genero;
     private SimpleDoubleProperty coste;
 
     /*constructor*/
-    public Peliculas(int codPelicula, double duracion, String genero, double coste){
+    public Peliculas(int codPelicula,String titulo, String duracion, String genero, double coste){
         this.codPelicula = new SimpleIntegerProperty(codPelicula);
-        this.duracion = new SimpleDoubleProperty(duracion);
+        this.titulo = new SimpleStringProperty(titulo);
+        this.duracion = new SimpleStringProperty(duracion);
         this.genero = new SimpleStringProperty(genero);
         this.coste = new SimpleDoubleProperty(coste);
     }
+    public Peliculas(String titulo, String duracion, String genero){
+        this.titulo = new SimpleStringProperty(titulo);
+        this.duracion = new SimpleStringProperty(duracion);
+        this.genero = new SimpleStringProperty(genero);
+    }
 
+    public Peliculas (int codPelicula){
+        this.codPelicula = new SimpleIntegerProperty(codPelicula);
+    }
+      
     
 
     @Override
@@ -34,11 +45,19 @@ public class Peliculas {
         this.codPelicula.set(codPelicula);
     }
 
-    public double getDuracion() {
+    public String gettitulo() {
+        return titulo.get();
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo.set(titulo);
+    }
+
+    public String getDuracion() {
         return duracion.get();//esta bien?
     }
 
-    public void setDuracion(double duracion) {
+    public void setDuracion(String duracion) {
         this.duracion.set(duracion);
     }
 
