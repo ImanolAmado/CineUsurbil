@@ -21,8 +21,7 @@ public class SalaDao {
 	public Sala[] leerSalas(String codCine) throws SQLException {
 		
 	// Añadimos a la consulta "codCine" que recibimos de parámetro
-		String sql = SALASCINE + "\"" + codCine + "\""; 
-		System.out.println(sql);
+		String sql = SALASCINE + "\"" + codCine + "\""; 		
 		Sala[] salas = new Sala[20];
         int i = 0;		
 		Connection c = ConectorBBDD.conectar();
@@ -31,8 +30,7 @@ public class SalaDao {
 
 		while (rset.next()){
             Sala sala = new Sala(rset.getString("codSala"));
-			salas[i] = sala;
-			System.out.println(salas[i].getCodSala());
+			salas[i] = sala;			
             i++;
 		}
 

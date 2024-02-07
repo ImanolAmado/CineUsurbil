@@ -7,8 +7,8 @@ import java.sql.SQLException;
 public class ConectorBBDD {
 
     final static String url = "jdbc:mysql://localhost:3306/cineusurbil";
-    final static String user = "root";
-    final static String pass = "MNPaPu2069$";
+    final static String user = "test";
+    final static String pass = "pass";
 
     public static Connection conectar() {
        

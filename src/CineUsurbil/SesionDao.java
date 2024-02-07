@@ -15,8 +15,7 @@ public class SesionDao {
         Peliculas[] pelicula = new Peliculas[100];
         for(int i = 0; i<salas.length;i++){
             if(salas[i] != null){
-        String sql = SALAPELICULA + "\"" + salas[i].getCodSala() + "\""; 
-        System.out.println(sql);
+        String sql = SALAPELICULA + "\"" + salas[i].getCodSala() + "\"";        
         int cont = 0;
         Connection c = ConectorBBDD.conectar();
 		PreparedStatement pstmt = c.prepareStatement(sql);
@@ -24,8 +23,7 @@ public class SesionDao {
 
         while (rset.next()){
             Peliculas peliculas = new Peliculas(rset.getInt("codPelicula"));
-            pelicula[i] = peliculas;
-            System.out.println(pelicula[i].getCodPelicula());
+            pelicula[i] = peliculas;           
             cont++;
         } 
         pstmt.close();
