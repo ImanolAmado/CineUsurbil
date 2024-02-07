@@ -14,7 +14,7 @@
         <columns>
           <TableColumn fx:id="nomPelicula" prefWidth="176.0" text="Películas" />
           <TableColumn fx:id="genero" prefWidth="130.0" text="Género" />
-            <TableColumn fx:id="durcion" prefWidth="162.39996337890625" text="Duración" />
+            <TableColumn fx:id="duracion" prefWidth="162.39996337890625" text="Duración" />
         </columns>
       </TableView>
    </children>

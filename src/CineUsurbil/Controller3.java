@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.animation.PauseTransition;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -48,6 +49,8 @@ public class Controller3 implements Initializable {
     @FXML
     private TableView<Peliculas> tabla;
    
+    @FXML
+    private ObservableList<Peliculas> tablaObservable;
 
     @FXML
     void atras(ActionEvent event) throws IOException {
