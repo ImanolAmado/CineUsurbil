@@ -13,8 +13,7 @@ public class PeliculaDao {
         Peliculas[] titulo = new Peliculas[100];
         for(int i=0;i<peliculas1.length;i++){
            if (peliculas1[i]!=null){
-             String sql = PELICULA +"\""+ peliculas1[i].getCodPelicula()+"\"";
-             System.out.println(sql);
+             String sql = PELICULA +"\""+ peliculas1[i].getCodPelicula()+"\"";             
              int cont = 0;
             Connection c = ConectorBBDD.conectar();
 		    PreparedStatement pstmt = c.prepareStatement(sql);
@@ -24,8 +23,7 @@ public class PeliculaDao {
 
                 Peliculas p= new Peliculas(rset.getString("titulo"),rset.getString("duracion"),rset.getString("genero"));
                 titulo[i]= p;
-                cont++;
-                System.out.println(p.gettitulo());
+                cont++;                
             }
             pstmt.close();
 		c.close();
