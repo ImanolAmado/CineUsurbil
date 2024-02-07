@@ -5,12 +5,15 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.animation.PauseTransition;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Duration;
 
 
@@ -21,7 +24,8 @@ public class Controller3 implements Initializable {
 
     private String codCine;
     private Sala[] salas;
-
+    private Peliculas[] peliculas1;
+    
     public void cargarCodCine(String codCine) {
         this.codCine = codCine;
     }
@@ -30,13 +34,19 @@ public class Controller3 implements Initializable {
     private Button botonAtras;
 
     @FXML
-    private TableColumn<?, ?> duracion;
+    private TableColumn<Peliculas, String> duracion;
+    
+    @FXML
+    private TableColumn<Peliculas, String> genero;
 
     @FXML
-    private Label nombreCine;
+    private Label nomCine;
 
     @FXML
-    private TableColumn<?, ?> pelicula;
+    private TableColumn<Peliculas, String> pelicula;
+    
+    @FXML
+    private TableView<Peliculas> tabla;
    
 
     @FXML
@@ -58,12 +68,38 @@ public class Controller3 implements Initializable {
             
             SalaDao salaDao = ConectorBBDD.getSalaDao();
 
+
             try {
                 salas = salaDao.leerSalas(codCine);
             } catch (SQLException e) {
                 System.out.println("Error! Excepción SQL");
                 e.printStackTrace();
             }
+            SesionDao sesionDao = ConectorBBDD.getSesionDao();
+            try {
+                peliculas1 = sesionDao.leerSesion(salas);
+            } catch (SQLException e) {
+                System.out.println("Error! Excepción SQL");
+                e.printStackTrace();
+            }
+            PeliculaDao tituloDao = ConectorBBDD.gettituloDao();
+            try {
+                /*Se sobre escribe*/
+                 peliculas1 = tituloDao.leerPelicula(peliculas1);
+            } catch (SQLException e) {
+                System.out.println("Error! Excepción SQL");
+                e.printStackTrace();
+            }
+
+            for(int i=0;i<peliculas1.length;i++){
+
+            peliculas1[i] = FXCollections.observableArrayList();
+        tabla.setItems(peliculas1[i]);
+
+        pelicula.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        duracion.setCellValueFactory(new PropertyValueFactory<>("apellido"));
+        genero.setCellValueFactory(new PropertyValueFactory<>("dni"));
+    }
 
         });
         pause.play();
