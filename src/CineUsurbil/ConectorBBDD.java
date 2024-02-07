@@ -35,11 +35,13 @@ public class ConectorBBDD {
         SalaDao salaDao = new SalaDao();
 		return salaDao;
 	}
+
 	public static SesionDao getSesionDao() {
         SesionDao sesionDao = new SesionDao();
 		return sesionDao;
 	}
-	public static PeliculaDao gettituloDao() {
+
+	public static PeliculaDao getTituloDao() {
         PeliculaDao tituloDao = new PeliculaDao();
 		return tituloDao;
 	}

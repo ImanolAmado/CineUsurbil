@@ -28,8 +28,7 @@ public class Peliculas {
     public Peliculas (int codPelicula){
         this.codPelicula = new SimpleIntegerProperty(codPelicula);
     }
-      
-    
+          
 
     @Override
     public String toString() {
@@ -45,7 +44,7 @@ public class Peliculas {
         this.codPelicula.set(codPelicula);
     }
 
-    public String gettitulo() {
+    public String getTitulo() {
         return titulo.get();
     }
 
