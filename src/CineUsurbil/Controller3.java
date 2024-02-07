@@ -51,8 +51,6 @@ public class Controller3 implements Initializable {
 
     @FXML
     private ObservableList<Peliculas> tablaObservable;
-    @FXML
-    private ObservableList<Peliculas> tablaObservable;
 
     @FXML
     void atras(ActionEvent event) throws IOException {
