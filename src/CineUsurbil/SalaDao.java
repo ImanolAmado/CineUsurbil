@@ -10,14 +10,7 @@ public class SalaDao {
 // Sentencia SQL
 	private static final String
 	SALASCINE = "SELECT codSala FROM sala where codCine=";
-
-    // AL CONTRARIO QUE EN EL CASO DE "CINEDAO", AQUÍ ENTIENDO QUE NECESITAMOS
-	// PASAR UN PARÁMETRO: "CODCINE".
-	// CON "CODCINE" PODREMOS METER EN EL ARRAY DE SALAS ÚNICAMENTE LAS 
-	// SALAS QUE CORRESPONDAN A UN CINE EN CONCRETO.
-	// UNA VEZ TENGAMOS ESE DATO, PODREMOS MIRAR EN LA TABLA "SALAPELICULA"
-	// DE NUESTRA BBDD Y EXTRAER LA INFO SOBRE LAS PELÍCULAS QUE SE VAN A EMITIR
-
+    
 	public Sala[] leerSalas(String codCine) throws SQLException {
 		
 	// Añadimos a la consulta "codCine" que recibimos de parámetro

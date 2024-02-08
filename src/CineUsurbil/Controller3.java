@@ -67,9 +67,10 @@ public class Controller3 implements Initializable {
 
         pause.setOnFinished(event -> {
 
-            System.out.println(codCine);
-            SalaDao salaDao = ConectorBBDD.getSalaDao();
+        // Hacemos las consultas SQL necesarias para extraer el título de las
+        // películas que se proyectan en el cine seleccionado.
 
+            SalaDao salaDao = ConectorBBDD.getSalaDao();
             try {
                 salas = salaDao.leerSalas(codCine);
             } catch (SQLException e) {
@@ -77,13 +78,14 @@ public class Controller3 implements Initializable {
                 e.printStackTrace();
             }
             SesionDao sesionDao = ConectorBBDD.getSesionDao();
-            try {
+            try {                
                 peliculas1 = sesionDao.leerSesion(salas);
             } catch (SQLException e) {
                 System.out.println("Error! Excepción SQL");
                 e.printStackTrace();
             }
-            PeliculaDao tituloDao = ConectorBBDD.gettituloDao();
+
+            PeliculaDao tituloDao = ConectorBBDD.getTituloDao();
             try {
                 /* Se sobre escribe */
                 peliculas1 = tituloDao.leerPelicula(peliculas1);
@@ -91,28 +93,25 @@ public class Controller3 implements Initializable {
                 System.out.println("Error! Excepción SQL");
                 e.printStackTrace();
             }
+        
+            // Configura las columnas de la tabla
+            pelicula.setCellValueFactory(new PropertyValueFactory<>("titulo"));
+            genero.setCellValueFactory(new PropertyValueFactory<>("genero"));
+            duracion.setCellValueFactory(new PropertyValueFactory<>("duracion"));
 
-            for(int i=0;i<peliculas1.length;i++){
-                if(peliculas1[i]!=null){
+            tablaObservable = FXCollections.observableArrayList();
 
-                System.out.println(peliculas1[i].gettitulo());
-                System.out.println(peliculas1[i].getGenero());
-                System.out.println(peliculas1[i].getDuracion());
+            // Se añaden las películas a la "tablaObservable"
+            for (int i = 0; i < peliculas1.length; i++) {
+                if (peliculas1[i]!=null){
+                tablaObservable.add(peliculas1[i]);
                 }
             }
 
-            tablaObservable = FXCollections.observableArrayList();
+            // Establece los elementos de la tabla desde la "tablaObservable"
             tabla.setItems(tablaObservable);
-            
-            pelicula.setCellValueFactory(new PropertyValueFactory<>(peliculas1[1].gettitulo()));
-            genero.setCellValueFactory(new PropertyValueFactory<>(peliculas1[1].getGenero()));
-            duracion.setCellValueFactory(new PropertyValueFactory<>(peliculas1[1].getDuracion()));
-                        
-            tablaObservable.add(peliculas1[1]);
 
         });
         pause.play();
-
     }
-
 }
