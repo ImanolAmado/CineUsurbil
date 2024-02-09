@@ -8,7 +8,7 @@ public class ConectorBBDD {
 
     final static String url = "jdbc:mysql://127.0.0.1/cineusurbil";
     final static String user = "test";
-    final static String pass = "pass";
+    final static String pass = "123456789A";
 
     public static Connection conectar() {
        

@@ -6,13 +6,14 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CineUsurbil.Controller3">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" 
+xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CineUsurbil.Controller3">
    <children>
       <Label fx:id="nomCine" layoutX="53.0" layoutY="34.0" text="nomCine" />
       <Button fx:id="botonAtras" layoutX="59.0" layoutY="344.0" mnemonicParsing="false" onAction="#atras" text="Atrás" />
       <TableView fx:id="tabla" layoutX="37.0" layoutY="93.0" prefHeight="200.0" prefWidth="470.0">
         <columns>
-          <TableColumn fx:id="nomPelicula" prefWidth="176.0" text="Películas" />
+          <TableColumn fx:id="pelicula" prefWidth="176.0" text="Películas" />
           <TableColumn fx:id="genero" prefWidth="130.0" text="Género" />
             <TableColumn fx:id="duracion" prefWidth="162.39996337890625" text="Duración" />
         </columns>
