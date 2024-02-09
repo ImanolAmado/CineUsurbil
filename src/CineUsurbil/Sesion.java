@@ -23,7 +23,6 @@ public class Sesion {
         this.fecha = new SimpleIntegerProperty(fecha);
         this.hora = new SimpleIntegerProperty(hora);
     }
-
    
 
     @Override

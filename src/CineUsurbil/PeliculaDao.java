@@ -6,20 +6,20 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class PeliculaDao {
-    private static final String PELICULA = "SELECT titulo,duracion,genero FROM pelicula where codpelicula=";
+    private static final String 
+    PELICULA = "SELECT titulo,duracion,genero FROM pelicula where codpelicula=?";
 
     public Peliculas[] leerPelicula(Peliculas[] peliculas1) throws SQLException {
         Peliculas[] titulo = new Peliculas[100];
         for (int i = 0; i < peliculas1.length; i++) {
-            if (peliculas1[i] != null) {
-                String sql = PELICULA + "\"" + peliculas1[i].getCodPelicula() + "\"";
+            if (peliculas1[i] != null) {                
                 int cont = 0;
-                Connection c = ConectorBBDD.conectar();
-                PreparedStatement pstmt = c.prepareStatement(sql);
+                Connection c = ConectorBBDD.conectar();               
+                PreparedStatement pstmt = c.prepareStatement(PELICULA);
+                pstmt.setInt(1,peliculas1[i].getCodPelicula());
                 ResultSet rset = pstmt.executeQuery();
 
                 while (rset.next()) {
-
                     Peliculas p = new Peliculas(rset.getString("titulo"), rset.getString("duracion"),
                             rset.getString("genero"));
                     titulo[i] = p;
@@ -29,7 +29,6 @@ public class PeliculaDao {
                 c.close();
             }
         }
-
         return titulo;
     }
 }
