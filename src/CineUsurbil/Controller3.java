@@ -27,6 +27,7 @@ public class Controller3 implements Initializable {
     private Sala[] salas;
     private Peliculas[] peliculas1;
     private Peliculas[] peliculas2;
+    private String nombreCine;
 
     @FXML
     private Button botonAtras;
@@ -87,9 +88,10 @@ public class Controller3 implements Initializable {
             Controller4 controller = loader.getController();
 
             // Cogemo todo el objeto película porque en la siguiente vista necesitaremos el título,
-            // la imagen y el código de película para buscar sesiones.
+            // la imagen y el código de película para buscar sesiones. También enviamos a la siguiente
+            // vista el nombre del cine
 
-            controller.cargarPelicula(seleccion);
+            controller.cargarPelicula(seleccion, nombreCine);
             Scene s = ((Button) event.getSource()).getScene();
             s.setRoot(parent);
         }
@@ -102,7 +104,7 @@ public class Controller3 implements Initializable {
     public void cargarCodCine(String codCine) {
         CineDao cineDao = ConectorBBDD.getCineDao();
         try {
-            String nombreCine = cineDao.getNombreCine(codCine);
+            nombreCine = cineDao.getNombreCine(codCine);
             nomCine.setText(nombreCine);
         } catch (SQLException e) {
             System.out.println("Error! Excepción SQL");

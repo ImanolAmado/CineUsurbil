@@ -14,8 +14,8 @@
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Button fx:id="botonAtras" layoutX="219.0" layoutY="332.0" mnemonicParsing="false" onAction="#atras" prefHeight="32.0" prefWidth="59.0" text="Atrás" />
-      <Button fx:id="botonFinalizar" layoutX="336.0" layoutY="332.0" mnemonicParsing="false" onAction="#finalizar" prefHeight="32.0" prefWidth="59.0" text="Finalizar" />
+      <Button fx:id="botonAtras" layoutX="287.0" layoutY="332.0" mnemonicParsing="false" onAction="#atras" prefHeight="32.0" prefWidth="59.0" text="Atrás" />
+      <Button fx:id="botonFinalizar" layoutX="445.0" layoutY="332.0" mnemonicParsing="false" onAction="#finalizar" prefHeight="32.0" prefWidth="59.0" text="Finalizar" />
       <ImageView fx:id="imagen" fitHeight="227.0" fitWidth="181.0" layoutX="68.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true" />
       <TableView layoutX="265.0" layoutY="106.0" prefHeight="200.0" prefWidth="261.0">
         <columns>
@@ -27,6 +27,11 @@
       <Label fx:id="titulo" layoutX="68.0" layoutY="43.0" prefHeight="24.0" prefWidth="157.0" text="titulo">
          <font>
             <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="cine" layoutX="284.0" layoutY="24.0" prefHeight="38.0" prefWidth="224.0" text="cine">
+         <font>
+            <Font size="18.0" />
          </font>
       </Label>
    </children>

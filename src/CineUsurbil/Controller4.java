@@ -22,6 +22,7 @@ import javafx.scene.image.Image;
 public class Controller4 implements Initializable{
 
     private Peliculas pelicula;
+    private String nombreCine;
 
     @FXML
     private Button botonAtras;
@@ -47,12 +48,16 @@ public class Controller4 implements Initializable{
     @FXML
     private Label sesiones;
 
+    @FXML
+    private Label cine;
+
      @FXML
     private ImageView imagen;
 
 
-    public void cargarPelicula(Peliculas pelicula) {
+    public void cargarPelicula(Peliculas pelicula, String nombreCine) {
         this.pelicula = pelicula;
+        this.nombreCine = nombreCine;
         
         // Para que la vista tenga tiempo de cargarse, sacamos en
         // pantalla el título y la carátula de la película.
@@ -65,7 +70,11 @@ public class Controller4 implements Initializable{
         Image caratulaPelicula = new Image(pelicula.getImagen());
 
         // Ahora si podemos asignarlo a la ImageView
-        imagen.setImage(caratulaPelicula);       
+        imagen.setImage(caratulaPelicula);    
+
+        // Asignamos al "label" cine, el nombre del cine.
+        
+        cine.setText(nombreCine);
 
     }
 
