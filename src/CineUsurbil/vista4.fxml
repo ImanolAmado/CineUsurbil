@@ -10,14 +10,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CineUsurbil.Controller4">
    <children>
-      <Label fx:id="sesiones" layoutX="317.0" layoutY="67.0" prefHeight="24.0" prefWidth="157.0" text="Sesiones disponibles">
+      <Label fx:id="sesiones" layoutX="267.0" layoutY="67.0" prefHeight="24.0" prefWidth="157.0" text="Sesiones disponibles">
          <font>
             <Font size="14.0" />
          </font></Label>
       <Button fx:id="botonAtras" layoutX="287.0" layoutY="332.0" mnemonicParsing="false" onAction="#atras" prefHeight="32.0" prefWidth="59.0" text="Atrás" />
       <Button fx:id="botonFinalizar" layoutX="445.0" layoutY="332.0" mnemonicParsing="false" onAction="#finalizar" prefHeight="32.0" prefWidth="59.0" text="Finalizar" />
       <ImageView fx:id="imagen" fitHeight="227.0" fitWidth="181.0" layoutX="68.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true" />
-      <TableView layoutX="265.0" layoutY="106.0" prefHeight="200.0" prefWidth="261.0">
+      <TableView fx:id="tabla" layoutX="265.0" layoutY="106.0" prefHeight="200.0" prefWidth="261.0">
         <columns>
           <TableColumn fx:id="fecha" prefWidth="100.5714111328125" text="Fecha" />
           <TableColumn fx:id="hora" prefWidth="79.4285888671875" text="Hora" />
@@ -29,7 +29,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="cine" layoutX="284.0" layoutY="24.0" prefHeight="38.0" prefWidth="224.0" text="cine">
+      <Label fx:id="cine" layoutX="265.0" layoutY="24.0" prefHeight="38.0" prefWidth="224.0" text="cine">
          <font>
             <Font size="18.0" />
          </font>

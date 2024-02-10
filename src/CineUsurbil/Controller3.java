@@ -89,9 +89,9 @@ public class Controller3 implements Initializable {
 
             // Cogemo todo el objeto película porque en la siguiente vista necesitaremos el título,
             // la imagen y el código de película para buscar sesiones. También enviamos a la siguiente
-            // vista el nombre del cine
+            // vista el código y el nombre del cine.
 
-            controller.cargarPelicula(seleccion, nombreCine);
+            controller.cargarPelicula(seleccion, nombreCine, codCine);
             Scene s = ((Button) event.getSource()).getScene();
             s.setRoot(parent);
         }

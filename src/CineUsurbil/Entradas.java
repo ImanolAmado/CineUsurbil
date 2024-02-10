@@ -1,38 +1,32 @@
 package CineUsurbil;
 
-import java.util.Arrays;
-
+import java.sql.Date;
+import java.sql.Time;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Entradas {
     private SimpleIntegerProperty codEntrada;
-    private SimpleIntegerProperty fecha;
-    private Peliculas[] pelicula;
-    private SimpleIntegerProperty horario;
+    private Date fecha;
+    private Peliculas pelicula;
+    private Time hora;
     private SimpleStringProperty sala;
     private SimpleDoubleProperty precio;
-    private Cliente[] cliente;
+    private Cliente cliente;
 
-    public Entradas(int codEntrada, int fecha, Peliculas pelicula, int horario, String sala, double precio,
+    public Entradas(int codEntrada, Date fecha, Peliculas pelicula, Time hora, String sala, double precio,
             Cliente cliente) {
         this.codEntrada = new SimpleIntegerProperty(codEntrada);
-        this.fecha = new SimpleIntegerProperty(fecha);
-        this.horario = new SimpleIntegerProperty(horario);
+        this.fecha = fecha;
+        this.hora = hora;
         this.sala = new SimpleStringProperty(sala);
-        this.pelicula = new Peliculas[1];
+        this.pelicula = pelicula;
         this.precio = new SimpleDoubleProperty(precio);
-        this.cliente = new Cliente[10];
+        this.cliente = cliente;
     }
 
-    @Override
-    public String toString() {
-        return "Entradas [CodEntrada=" + codEntrada + ", fecha=" + fecha + ", pelicula=" + Arrays.toString(pelicula)
-                + ", horario=" + horario + ", Sala=" + sala + ", precio=" + precio + ", cliente="
-                + Arrays.toString(cliente)
-                + "]";
-    }
+    
 
     public int getCodEntrada() {
         return codEntrada.get();
@@ -42,28 +36,28 @@ public class Entradas {
         this.codEntrada.set(codEntrada);
     }
 
-    public int getFecha() {
-        return fecha.get();
+    public Date getFecha() {
+        return fecha;
     }
 
-    public void setFecha(int fecha) {
-        this.fecha.set(fecha);
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
 
-    public Peliculas[] getPelicula() {
+    public Peliculas getPelicula() {
         return pelicula;
     }
 
-    public void setPelicula(Peliculas[] pelicula) {
+    public void setPelicula(Peliculas pelicula) {
         this.pelicula = pelicula;
     }
 
-    public int getHorario() {
-        return horario.get();
+    public Time getHora() {
+        return hora;
     }
 
-    public void setHorario(int horario) {
-        this.horario.set(horario);
+    public void setHorario(Time hora) {
+        this.hora = hora;
     }
 
     public String getSala() {
@@ -82,11 +76,11 @@ public class Entradas {
         this.precio.set(precio);
     }
 
-    public Cliente[] getCliente() {
+    public Cliente getCliente() {
         return cliente;
     }
 
-    public void setCliente(Cliente[] cliente) {
+    public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
 
