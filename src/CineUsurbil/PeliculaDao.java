@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class PeliculaDao {
     private static final String 
-    PELICULA = "SELECT titulo,duracion,genero FROM pelicula where codpelicula=?";
+    PELICULA = "SELECT codPelicula,titulo,duracion,genero,imagen FROM pelicula where codpelicula=?";
 
     public Peliculas[] leerPelicula(Peliculas[] peliculas1) throws SQLException {
         Peliculas[] titulo = new Peliculas[100];
@@ -21,7 +21,7 @@ public class PeliculaDao {
 
                 while (rset.next()) {
                     Peliculas p = new Peliculas(rset.getString("titulo"), rset.getString("duracion"),
-                            rset.getString("genero"));
+                            rset.getString("genero"), rset.getInt("codPelicula"), rset.getString("imagen"));
                     titulo[i] = p;
                     cont++;
                 }

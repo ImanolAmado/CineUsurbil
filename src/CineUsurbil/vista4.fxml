@@ -1,20 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CineUsurbil.Controller4">
    <children>
-      <DatePicker fx:id="fecha" layoutX="73.0" layoutY="91.0" promptText="fecha" />
-      <Label fx:id="nomCineYnomPeli" layoutX="35.0" layoutY="30.0" text="Nombre del cine + Nombre pelicula" />
-      <Label layoutX="56.0" layoutY="64.0" text="Fecha:" />
-      <Label fx:id="fehcaYnomPeli" layoutX="35.0" layoutY="155.0" text="Horarios &quot;fecha establecida&quot; +  &quot;nombre de la pelicula&quot;: " />
-      <Text fx:id="horaYpeliYsalaYprecio" layoutX="56.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- Hora + Pelicula (sala) + precio" />
-      <Text fx:id="horaYpeliYsalaYprecio2" layoutX="56.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- Hora + Pelicula (sala) + precio" />
-      <Button fx:id="botonAtras" layoutX="51.0" layoutY="323.0" mnemonicParsing="false" onAction="#atras" text="Atrás" />
-      <Button fx:id="botonFinalizar" layoutX="507.0" layoutY="323.0" mnemonicParsing="false" onAction="#finalizar" text="Finalizar" />
+      <Label fx:id="sesiones" layoutX="317.0" layoutY="67.0" prefHeight="24.0" prefWidth="157.0" text="Sesiones disponibles">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Button fx:id="botonAtras" layoutX="219.0" layoutY="332.0" mnemonicParsing="false" onAction="#atras" prefHeight="32.0" prefWidth="59.0" text="Atrás" />
+      <Button fx:id="botonFinalizar" layoutX="336.0" layoutY="332.0" mnemonicParsing="false" onAction="#finalizar" prefHeight="32.0" prefWidth="59.0" text="Finalizar" />
+      <ImageView fx:id="imagen" fitHeight="227.0" fitWidth="181.0" layoutX="68.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true" />
+      <TableView layoutX="265.0" layoutY="106.0" prefHeight="200.0" prefWidth="261.0">
+        <columns>
+          <TableColumn fx:id="fecha" prefWidth="100.5714111328125" text="Fecha" />
+          <TableColumn fx:id="hora" prefWidth="79.4285888671875" text="Hora" />
+            <TableColumn fx:id="sala" text="Sala" />
+        </columns>
+      </TableView>
+      <Label fx:id="titulo" layoutX="68.0" layoutY="43.0" prefHeight="24.0" prefWidth="157.0" text="titulo">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

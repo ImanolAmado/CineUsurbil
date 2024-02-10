@@ -13,6 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -25,6 +26,7 @@ public class Controller3 implements Initializable {
     private String codCine;
     private Sala[] salas;
     private Peliculas[] peliculas1;
+    private Peliculas[] peliculas2;
 
     @FXML
     private Button botonAtras;
@@ -51,6 +53,15 @@ public class Controller3 implements Initializable {
     private ObservableList<Peliculas> tablaObservable;
 
     @FXML
+    private void alertaSeleccion() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setHeaderText(null);
+        alert.setTitle("Título no seleccionado");
+        alert.setContentText("¡Error! Selecciona un título");
+        alert.showAndWait();
+    }
+
+    @FXML
     void atras(ActionEvent event) throws IOException {
         App.setRoot("vista2");
     }
@@ -58,23 +69,30 @@ public class Controller3 implements Initializable {
     @FXML
     void seleccionar(ActionEvent event) throws IOException {
 
-    // Al hacer "click" en el botón "seleccionar" asignamos la selección
-    // en la variable "seleccion" que es de tipo "Pelicula".
+        // Al hacer "click" en el botón "seleccionar" comprobamos si es "null".
+        // en caso de serlo, sacamos alerta. Si la selección es válida, lo asignamos
+        // en la variable "seleccion" que es de tipo "Peliculas".
 
-        Peliculas seleccion = tabla.getSelectionModel().getSelectedItem();
-        System.out.println("Primer print" + seleccion.getTitulo());
+        if (tabla.getSelectionModel().getSelectedItem() == null) {
+            alertaSeleccion();
+        } else {
 
-    // TODO --> SI EL USUARIO NO SELECCIONA PELICULA Y ACCIONA EL BOTÓN,
-    // HAY QUE SACAR UN MENSAJE DE ALERTA.
+            Peliculas seleccion = tabla.getSelectionModel().getSelectedItem();
+            System.out.println("Primer print" + seleccion.getTitulo());
+            System.out.println("Primer print" + seleccion.getCodPelicula());
+            System.out.println("Primer print" + seleccion.getImagen());
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("vista4.fxml"));
-        Parent parent = loader.load();
-        Controller4 controller = loader.getController();
-    
-    // Cogemos únicamente el código de película.
-        controller.cargarTituloPelicula(seleccion.getTitulo());
-        Scene s = ((Button) event.getSource()).getScene();
-        s.setRoot(parent);       
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("vista4.fxml"));
+            Parent parent = loader.load();
+            Controller4 controller = loader.getController();
+
+            // Cogemo todo el objeto película porque en la siguiente vista necesitaremos el título,
+            // la imagen y el código de película para buscar sesiones.
+
+            controller.cargarPelicula(seleccion);
+            Scene s = ((Button) event.getSource()).getScene();
+            s.setRoot(parent);
+        }
     }
 
     // Creamos variable "codCine" y un constructor para asignarle el
@@ -93,7 +111,6 @@ public class Controller3 implements Initializable {
         this.codCine = codCine;
     }
 
-
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -111,23 +128,22 @@ public class Controller3 implements Initializable {
             try {
                 salas = salaDao.leerSalas(codCine);
             } catch (SQLException e) {
-                System.out.println("Error! Excepción SQL");
+                System.out.println("Error1! Excepción SQL");
                 e.printStackTrace();
             }
             SesionDao sesionDao = ConectorBBDD.getSesionDao();
             try {
                 peliculas1 = sesionDao.leerSesion(salas);
             } catch (SQLException e) {
-                System.out.println("Error! Excepción SQL");
+                System.out.println("Error2! Excepción SQL");
                 e.printStackTrace();
             }
 
             PeliculaDao tituloDao = ConectorBBDD.getTituloDao();
             try {
-                /* Se sobre escribe */
-                peliculas1 = tituloDao.leerPelicula(peliculas1);
+                peliculas2 = tituloDao.leerPelicula(peliculas1);
             } catch (SQLException e) {
-                System.out.println("Error! Excepción SQL");
+                System.out.println("Error3! Excepción SQL");
                 e.printStackTrace();
             }
 
@@ -139,9 +155,9 @@ public class Controller3 implements Initializable {
             tablaObservable = FXCollections.observableArrayList();
 
             // Se añaden las películas a la "tablaObservable"
-            for (int i = 0; i < peliculas1.length; i++) {
-                if (peliculas1[i] != null) {
-                    tablaObservable.add(peliculas1[i]);
+            for (int i = 0; i < peliculas2.length; i++) {
+                if (peliculas2[i] != null) {
+                    tablaObservable.add(peliculas2[i]);
                 }
             }
 
