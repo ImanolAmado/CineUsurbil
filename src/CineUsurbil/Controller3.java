@@ -13,7 +13,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -24,9 +23,9 @@ import javafx.util.Duration;
 public class Controller3 implements Initializable {
 
     private String codCine;
-    private Sala[] salas;
-    private Peliculas[] peliculas1;
-    private Peliculas[] peliculas2;
+    private String[] salas;
+    private int [] codigoPelicula;   
+    private Peliculas[] peliculas;
     private String nombreCine;
 
     @FXML
@@ -53,14 +52,7 @@ public class Controller3 implements Initializable {
     @FXML
     private ObservableList<Peliculas> tablaObservable;
 
-    @FXML
-    private void alertaSeleccion() {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setHeaderText(null);
-        alert.setTitle("Título no seleccionado");
-        alert.setContentText("¡Error! Selecciona un título");
-        alert.showAndWait();
-    }
+   
 
     @FXML
     void atras(ActionEvent event) throws IOException {
@@ -75,14 +67,11 @@ public class Controller3 implements Initializable {
         // en la variable "seleccion" que es de tipo "Peliculas".
 
         if (tabla.getSelectionModel().getSelectedItem() == null) {
-            alertaSeleccion();
+            Alertas.alertaSeleccion();
         } else {
 
             Peliculas seleccion = tabla.getSelectionModel().getSelectedItem();
-            System.out.println("Primer print" + seleccion.getTitulo());
-            System.out.println("Primer print" + seleccion.getCodPelicula());
-            System.out.println("Primer print" + seleccion.getImagen());
-
+            
             FXMLLoader loader = new FXMLLoader(getClass().getResource("vista4.fxml"));
             Parent parent = loader.load();
             Controller4 controller = loader.getController();
@@ -130,22 +119,21 @@ public class Controller3 implements Initializable {
             try {
                 salas = salaDao.leerSalas(codCine);
             } catch (SQLException e) {
-                System.out.println("Error1! Excepción SQL");
+                System.out.println("Error 1! Excepción SQL");
                 e.printStackTrace();
             }
             SesionDao sesionDao = ConectorBBDD.getSesionDao();
             try {
-                peliculas1 = sesionDao.leerSesion(salas);
+                codigoPelicula = sesionDao.leerSesion(salas);
             } catch (SQLException e) {
-                System.out.println("Error2! Excepción SQL");
+                System.out.println("Error 2! Excepción SQL");
                 e.printStackTrace();
             }
-
             PeliculaDao tituloDao = ConectorBBDD.getTituloDao();
             try {
-                peliculas2 = tituloDao.leerPelicula(peliculas1);
+                peliculas = tituloDao.leerPelicula(codigoPelicula);
             } catch (SQLException e) {
-                System.out.println("Error3! Excepción SQL");
+                System.out.println("Error 3! Excepción SQL");
                 e.printStackTrace();
             }
 
@@ -157,10 +145,10 @@ public class Controller3 implements Initializable {
             tablaObservable = FXCollections.observableArrayList();
 
             // Se añaden las películas a la "tablaObservable"
-            for (int i = 0; i < peliculas2.length; i++) {
-                if (peliculas2[i] != null) {
-                    tablaObservable.add(peliculas2[i]);
-                }
+            for (int i = 0; i < peliculas.length; i++) {
+                if (peliculas[i] != null) {
+                    tablaObservable.add(peliculas[i]);
+                } else break; // Ahorramos recursos
             }
 
             // Establece los elementos de la tabla desde la "tablaObservable"

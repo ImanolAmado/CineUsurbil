@@ -16,6 +16,7 @@ public class CineDao {
 	// los nombres de los cines en la "vista2".
 
 	public Cine[] leerCines() throws SQLException {
+		
 		Cine[] cines = new Cine[10];
 		int i = 0;
 		Connection c = ConectorBBDD.conectar();
@@ -43,6 +44,7 @@ public class CineDao {
 		pstmt.setString(1, codCine);
 		ResultSet rset = pstmt.executeQuery();
 		String nombre="";
+		
 		while (rset.next()) {
 			nombre=rset.getString("nombre");
 

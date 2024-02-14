@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -82,7 +84,12 @@ public class Controller2 implements Initializable {
 
     @FXML
     void finalizar(ActionEvent event) throws IOException {
-        App.setRoot("vista1");
+        if (Controller4.carritoCompra[0]==null){
+            Platform.exit();
+        } else {
+            Alertas.alertaCarritoLleno();
+        }
+        
     }
 
     // Método "initialize" es lo primero que se ejecuta siempre en el controller.

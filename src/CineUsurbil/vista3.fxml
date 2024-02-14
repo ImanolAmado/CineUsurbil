@@ -14,6 +14,7 @@
             <Font size="36.0" />
          </font></Label>
       <Button fx:id="botonAtras" layoutX="166.0" layoutY="324.0" mnemonicParsing="false" onAction="#atras" prefHeight="38.0" prefWidth="86.0" text="Atrás" />
+      <Button fx:id="seleccionar" layoutX="316.0" layoutY="324.0" mnemonicParsing="false" onAction="#seleccionar" prefHeight="37.0" prefWidth="76.0" text="Seleccionar" />
       <TableView fx:id="tabla" layoutX="67.0" layoutY="93.0" prefHeight="200.0" prefWidth="452.0">
         <columns>
           <TableColumn fx:id="pelicula" prefWidth="203.20001220703125" text="Películas" />
@@ -21,6 +22,6 @@
             <TableColumn fx:id="duracion" prefWidth="145.60003662109375" text="Duración" />
         </columns>
       </TableView>
-      <Button fx:id="seleccionar" layoutX="316.0" layoutY="324.0" mnemonicParsing="false" onAction="#seleccionar" prefHeight="37.0" prefWidth="76.0" text="Seleccionar" />
+     
    </children>
 </AnchorPane>

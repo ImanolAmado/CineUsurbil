@@ -6,29 +6,35 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class PeliculaDao {
+
     private static final String 
     PELICULA = "SELECT codPelicula,titulo,duracion,genero,imagen FROM pelicula where codpelicula=?";
 
-    public Peliculas[] leerPelicula(Peliculas[] peliculas1) throws SQLException {
+    public Peliculas[] leerPelicula(int[] codigoPelicula) throws SQLException {
+       
         Peliculas[] titulo = new Peliculas[100];
-        for (int i = 0; i < peliculas1.length; i++) {
-            if (peliculas1[i] != null) {                
-                int cont = 0;
-                Connection c = ConectorBBDD.conectar();               
-                PreparedStatement pstmt = c.prepareStatement(PELICULA);
-                pstmt.setInt(1,peliculas1[i].getCodPelicula());
+        Connection c = ConectorBBDD.conectar();               
+        PreparedStatement pstmt = c.prepareStatement(PELICULA);
+        int contador =0;
+
+        // Hemos cambiado el ciclo "for" y la condicional "if" por un "do while", que hace
+        // lo mismo mucho más eficientemente.
+
+        do {          
+                pstmt.setInt(1,codigoPelicula[contador]);
                 ResultSet rset = pstmt.executeQuery();
 
                 while (rset.next()) {
                     Peliculas p = new Peliculas(rset.getString("titulo"), rset.getString("duracion"),
                             rset.getString("genero"), rset.getInt("codPelicula"), rset.getString("imagen"));
-                    titulo[i] = p;
-                    cont++;
-                }
-                pstmt.close();
-                c.close();
-            }
-        }
+                    titulo[contador] = p;                   
+                }       
+                contador++;        
+            
+        } while (codigoPelicula[contador] !=-1);
+
+        pstmt.close();
+        c.close();
         return titulo;
     }
 }

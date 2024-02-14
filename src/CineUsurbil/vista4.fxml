@@ -14,14 +14,16 @@
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Button fx:id="botonAtras" layoutX="287.0" layoutY="332.0" mnemonicParsing="false" onAction="#atras" prefHeight="32.0" prefWidth="59.0" text="Atrás" />
-      <Button fx:id="botonFinalizar" layoutX="445.0" layoutY="332.0" mnemonicParsing="false" onAction="#finalizar" prefHeight="32.0" prefWidth="59.0" text="Finalizar" />
+      <Button fx:id="botonAtras" layoutX="263.0" layoutY="332.0" mnemonicParsing="false" onAction="#atras" prefHeight="32.0" prefWidth="59.0" text="Atrás" />
+      <Button fx:id="botonAñadir" layoutX="360.0" layoutY="332.0" mnemonicParsing="false" onAction="#añadir" prefHeight="32.0" prefWidth="94.0" text="Añadir carrito" />
+      <Button fx:id="finalizar" layoutX="489.0" layoutY="332.0" mnemonicParsing="false" onAction="#finalizar" prefHeight="32.0" prefWidth="59.0" text="Finalizar" />
       <ImageView fx:id="imagen" fitHeight="227.0" fitWidth="181.0" layoutX="68.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true" />
-      <TableView fx:id="tabla" layoutX="265.0" layoutY="106.0" prefHeight="200.0" prefWidth="261.0">
+      <TableView fx:id="tabla" layoutX="263.0" layoutY="106.0" prefHeight="200.0" prefWidth="289.0">
         <columns>
-          <TableColumn fx:id="fecha" prefWidth="100.5714111328125" text="Fecha" />
-          <TableColumn fx:id="hora" prefWidth="79.4285888671875" text="Hora" />
-            <TableColumn fx:id="sala" text="Sala" />
+          <TableColumn fx:id="fecha" prefWidth="92.0" text="Fecha" />
+          <TableColumn fx:id="hora" prefWidth="67.4285888671875" text="Hora" />
+            <TableColumn fx:id="sala" prefWidth="70.28564453125" text="Sala" />
+            <TableColumn fx:id="precio" prefWidth="56.0" text="Precio" />
         </columns>
       </TableView>
       <Label fx:id="titulo" layoutX="68.0" layoutY="43.0" prefHeight="24.0" prefWidth="157.0" text="titulo">
@@ -33,6 +35,6 @@
          <font>
             <Font size="18.0" />
          </font>
-      </Label>
+      </Label>      
    </children>
 </AnchorPane>

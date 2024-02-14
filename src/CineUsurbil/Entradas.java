@@ -1,48 +1,27 @@
 package CineUsurbil;
 
-import java.sql.Date;
-import java.sql.Time;
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
 
 public class Entradas {
-    private SimpleIntegerProperty codEntrada;
-    private Date fecha;
+
+    private Cine cine;  
+    private Sesion sesion;
     private Peliculas pelicula;
-    private Time hora;
-    private SimpleStringProperty sala;
-    private SimpleDoubleProperty precio;
-    private Cliente cliente;
 
-    public Entradas(int codEntrada, Date fecha, Peliculas pelicula, Time hora, String sala, double precio,
-            Cliente cliente) {
-        this.codEntrada = new SimpleIntegerProperty(codEntrada);
-        this.fecha = fecha;
-        this.hora = hora;
-        this.sala = new SimpleStringProperty(sala);
+    public Entradas(Cine cine, Sesion sesion, Peliculas pelicula) {             
+       
+        this.cine = cine;    
+        this.sesion = sesion;
         this.pelicula = pelicula;
-        this.precio = new SimpleDoubleProperty(precio);
-        this.cliente = cliente;
+       
+    }    
+
+    public Cine getCine(){
+        return cine;
     }
 
-    
-
-    public int getCodEntrada() {
-        return codEntrada.get();
-    }
-
-    public void setCodEntrada(int codEntrada) {
-        this.codEntrada.set(codEntrada);
-    }
-
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
+    public void setCine(Cine cine){
+        this.cine = cine;
+    }    
 
     public Peliculas getPelicula() {
         return pelicula;
@@ -50,38 +29,21 @@ public class Entradas {
 
     public void setPelicula(Peliculas pelicula) {
         this.pelicula = pelicula;
+    } 
+
+    public Sesion getSesion() {
+        return sesion;
     }
 
-    public Time getHora() {
-        return hora;
+    public void setSesion(Sesion sesion) {
+        this.sesion = sesion;
     }
 
-    public void setHorario(Time hora) {
-        this.hora = hora;
-    }
-
-    public String getSala() {
-        return sala.get();
-    }
-
-    public void setSala(String sala) {
-        this.sala.set(sala);
-    }
-
-    public double getPrecio() {
-        return precio.get();// esta bien?
-    }
-
-    public void setPrecio(double precio) {
-        this.precio.set(precio);
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
+    @Override
+    public String toString() {
+        return cine.getNombre() + " - " + pelicula.getTitulo() + " - " + sesion.getFecha() + " - "
+        + sesion.getHora() + " - " + sesion.getNombreSala() + " - " + sesion.getPrecio() +"€";  
+    }      
+    
 
 }
