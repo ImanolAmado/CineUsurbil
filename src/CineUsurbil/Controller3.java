@@ -22,9 +22,7 @@ import javafx.util.Duration;
 
 public class Controller3 implements Initializable {
 
-    private String codCine;
-    private String[] salas;
-    private int [] codigoPelicula;   
+    private String codCine;  
     private Peliculas[] peliculas;
     private String nombreCine;
 
@@ -52,8 +50,6 @@ public class Controller3 implements Initializable {
     @FXML
     private ObservableList<Peliculas> tablaObservable;
 
-   
-
     @FXML
     void atras(ActionEvent event) throws IOException {
         App.setRoot("vista2");
@@ -71,13 +67,15 @@ public class Controller3 implements Initializable {
         } else {
 
             Peliculas seleccion = tabla.getSelectionModel().getSelectedItem();
-            
+
             FXMLLoader loader = new FXMLLoader(getClass().getResource("vista4.fxml"));
             Parent parent = loader.load();
             Controller4 controller = loader.getController();
 
-            // Cogemo todo el objeto película porque en la siguiente vista necesitaremos el título,
-            // la imagen y el código de película para buscar sesiones. También enviamos a la siguiente
+            // Cogemo todo el objeto película porque en la siguiente vista necesitaremos el
+            // título,
+            // la imagen y el código de película para buscar sesiones. También enviamos a la
+            // siguiente
             // vista el código y el nombre del cine.
 
             controller.cargarPelicula(seleccion, nombreCine, codCine);
@@ -110,28 +108,15 @@ public class Controller3 implements Initializable {
 
         PauseTransition pause = new PauseTransition(Duration.seconds(0.1));
 
-        pause.setOnFinished(event -> {
+        pause.setOnFinished(event -> {                       
 
-            // Hacemos las consultas SQL necesarias para extraer el título de las
-            // películas que se proyectan en el cine seleccionado.
+            // Consultas SQL para extraer el título de las
+            // películas que se proyectan en el cine seleccionado
+            // partiendo del código de cine.
 
-            SalaDao salaDao = ConectorBBDD.getSalaDao();
-            try {
-                salas = salaDao.leerSalas(codCine);
-            } catch (SQLException e) {
-                System.out.println("Error 1! Excepción SQL");
-                e.printStackTrace();
-            }
-            SesionDao sesionDao = ConectorBBDD.getSesionDao();
-            try {
-                codigoPelicula = sesionDao.leerSesion(salas);
-            } catch (SQLException e) {
-                System.out.println("Error 2! Excepción SQL");
-                e.printStackTrace();
-            }
             PeliculaDao tituloDao = ConectorBBDD.getTituloDao();
             try {
-                peliculas = tituloDao.leerPelicula(codigoPelicula);
+                peliculas = tituloDao.leerPelicula(codCine);
             } catch (SQLException e) {
                 System.out.println("Error 3! Excepción SQL");
                 e.printStackTrace();
@@ -148,7 +133,8 @@ public class Controller3 implements Initializable {
             for (int i = 0; i < peliculas.length; i++) {
                 if (peliculas[i] != null) {
                     tablaObservable.add(peliculas[i]);
-                } else break; // Ahorramos recursos
+                } else
+                    break; // Ahorramos recursos
             }
 
             // Establece los elementos de la tabla desde la "tablaObservable"
