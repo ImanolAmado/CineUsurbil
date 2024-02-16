@@ -9,18 +9,26 @@ public class Cliente {
     private SimpleStringProperty dni;
     private SimpleStringProperty nombre;
     private SimpleStringProperty apellidos;
-    private SimpleBooleanProperty sexo;
-    private SimpleIntegerProperty contraseña;
+    private SimpleStringProperty sexo;
+    private SimpleStringProperty contraseña;
 
 
-    public Cliente(String dni, String nombre , String apellidos , boolean sexo , int contraseña){
+    public Cliente(String dni, String nombre , String apellidos , String sexo , String contraseña){
     this.dni = new SimpleStringProperty(dni);
     this.nombre = new SimpleStringProperty(nombre);
     this.apellidos = new SimpleStringProperty(apellidos);
-    this.sexo = new SimpleBooleanProperty(sexo);
-    this.contraseña = new SimpleIntegerProperty(contraseña);
+    this.sexo = new SimpleStringProperty(sexo);
+    this.contraseña = new SimpleStringProperty(contraseña);
     }
 
+    public Cliente(String dni, String contraseña){
+    this.dni = new SimpleStringProperty(dni);
+    this.contraseña = new SimpleStringProperty(contraseña);
+    }
+
+    public Cliente(){
+        
+    }
 
     @Override
     public String toString() {
@@ -54,22 +62,22 @@ public class Cliente {
         this.apellidos.set(apellidos);
     }
 
-    public boolean isSexo() {
+    public String Sexo() {
         return sexo.get();
     }//Esto está bién?
 
 
-    public void setSexo(boolean sexo) {
+    public void setSexo(String sexo) {
         this.sexo.set(sexo);
     }
 
 
-    public int getContraseña() {
+    public String getContraseña() {
         return contraseña.get();
     }
 
 
-    public void setContraseña(int contraseña) {
+    public void setContraseña(String contraseña) {
         this.contraseña.set(contraseña);
     }    
     
