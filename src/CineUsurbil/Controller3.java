@@ -1,6 +1,7 @@
 package CineUsurbil;
 
 import java.io.IOException;
+
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -30,7 +31,7 @@ public class Controller3 implements Initializable {
     private Button botonAtras;
 
     @FXML
-    private Button seleccionar;
+    private Button botonsiguiente;
 
     @FXML
     private TableColumn<Peliculas, String> duracion;
@@ -142,5 +143,5 @@ public class Controller3 implements Initializable {
 
         });
         pause.play();
-    }
+    } 
 }

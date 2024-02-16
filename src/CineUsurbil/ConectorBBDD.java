@@ -45,6 +45,10 @@ public class ConectorBBDD {
         PeliculaDao tituloDao = new PeliculaDao();
 		return tituloDao;
 	}
-
-		
+	
+	public static ClienteDao getClienteDao() {
+        ClienteDao clienteDao = new ClienteDao();
+		return clienteDao;
+	}
+	
 }

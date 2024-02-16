@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CineUsurbil.Controller5">
+   <children>
+      <Button fx:id="atras" layoutX="74.0" layoutY="338.0" mnemonicParsing="false" onAction="#atras" prefHeight="26.0" prefWidth="66.0" text="Atras" />      
+      <Button fx:id="vaciar" layoutX="177.0" layoutY="338.0" mnemonicParsing="false" onAction="#vaciar" prefHeight="26.0" prefWidth="94.0" text="Vaciar carrito" />
+      <TextField fx:id="usuario" layoutX="412.0" layoutY="238.0" prefHeight="25.0" prefWidth="114.0" />
+      <TextField fx:id="contraseña" layoutX="412.0" layoutY="277.0" prefHeight="25.0" prefWidth="114.0" />      
+      <Button fx:id="login" layoutX="446.0" layoutY="325.0" mnemonicParsing="false" onAction="#login" text="Login" />
+      
+      <ListView fx:id="lista" layoutX="57.0" layoutY="68.0" prefHeight="142.0" prefWidth="472.0" />
+      <Label layoutX="57.0" layoutY="14.0" prefHeight="42.0" prefWidth="205.0" text="Resumen compra">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Label layoutX="87.0" layoutY="225.0" prefHeight="26.0" prefWidth="66.0" text="Subtotal:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="81.0" layoutY="251.0" prefHeight="26.0" prefWidth="77.0" text="Descuento:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="73.0" layoutY="277.0" prefHeight="26.0" prefWidth="94.0" text="Total a pagar:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="subtotal" layoutX="148.0" layoutY="225.0" prefHeight="26.0" prefWidth="57.0" text="cifra">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="descuento" layoutX="158.0" layoutY="251.0" prefHeight="26.0" prefWidth="46.0" text="cifra">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="total" layoutX="167.0" layoutY="277.0" prefHeight="26.0" prefWidth="46.0" text="cifra">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="345.0" layoutY="237.0" prefHeight="26.0" prefWidth="57.0" text="Usuario:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="325.0" layoutY="276.0" prefHeight="26.0" prefWidth="85.0" text="Contraseña:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      
+     
+   </children>
+</AnchorPane>
