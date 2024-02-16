@@ -1,12 +1,12 @@
 package CineUsurbil;
 
 import java.io.IOException;
+
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.animation.PauseTransition;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -35,6 +35,9 @@ public class Controller3 implements Initializable {
     private Button botonAtras;
 
     @FXML
+    private Button botonsiguiente;
+
+    @FXML
     private TableColumn<Peliculas, String> duracion;
 
     @FXML
@@ -55,6 +58,12 @@ public class Controller3 implements Initializable {
     @FXML
     void atras(ActionEvent event) throws IOException {
         App.setRoot("vista2");
+    }
+
+    @FXML
+    void siguiente(ActionEvent event) throws IOException{
+        
+        App.setRoot("vista4");
     }
 
     @FXML
@@ -113,5 +122,5 @@ public class Controller3 implements Initializable {
 
         });
         pause.play();
-    }
+    } 
 }
