@@ -9,9 +9,11 @@ public class Peliculas {
     private SimpleStringProperty titulo;
     private SimpleStringProperty duracion;
     private SimpleStringProperty genero;
+    private SimpleStringProperty imagen;
     private SimpleDoubleProperty coste;
 
-    /*constructor*/
+    // Constructores
+
     public Peliculas(int codPelicula,String titulo, String duracion, String genero, double coste){
         this.codPelicula = new SimpleIntegerProperty(codPelicula);
         this.titulo = new SimpleStringProperty(titulo);
@@ -19,22 +21,17 @@ public class Peliculas {
         this.genero = new SimpleStringProperty(genero);
         this.coste = new SimpleDoubleProperty(coste);
     }
-    public Peliculas(String titulo, String duracion, String genero){
+    public Peliculas(String titulo, String duracion, String genero, int codPelicula, String imagen){
+        this.codPelicula = new SimpleIntegerProperty(codPelicula);
         this.titulo = new SimpleStringProperty(titulo);
         this.duracion = new SimpleStringProperty(duracion);
         this.genero = new SimpleStringProperty(genero);
+        this.imagen = new SimpleStringProperty(imagen);
     }
 
     public Peliculas (int codPelicula){
         this.codPelicula = new SimpleIntegerProperty(codPelicula);
-    }
-          
-
-    @Override
-    public String toString() {
-        return "Peliculas [codPelicula=" + codPelicula + ", duracion=" + duracion + ", genero=" + genero + ", coste="
-                + coste + "]";
-    }
+    }             
 
     public int getCodPelicula() {
         return codPelicula.get();
@@ -53,7 +50,7 @@ public class Peliculas {
     }
 
     public String getDuracion() {
-        return duracion.get();//esta bien?
+        return duracion.get();
     }
 
     public void setDuracion(String duracion) {
@@ -69,14 +66,27 @@ public class Peliculas {
     }
 
     public double getCoste() {
-        return coste.get();//está bien?
+        return coste.get();
     }
 
     public void setCoste(double coste) {
         this.coste.set(coste);
     }
 
-   
+    public void setImagen(String imagen) {
+        this.imagen.set(imagen);
+    }
+
+    public String getImagen() {
+        return imagen.get();
+    }
+
+
+    @Override
+    public String toString() {
+        return "Peliculas [codPelicula=" + codPelicula + ", duracion=" + duracion + ", genero=" + genero + ", coste="
+                + coste + "]";
+    }
 
    
 }

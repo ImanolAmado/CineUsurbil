@@ -27,6 +27,11 @@ public class Sala {
         this.codSala = new SimpleStringProperty(codSala);
     }
 
+    public Sala(String codSala, String nombre){
+        this.codSala = new SimpleStringProperty(codSala);
+        this.nombre = new SimpleStringProperty(nombre);
+    }
+
     @Override
     public String toString() {
         return "Salas [codSala=" + codSala + ", nombre=" + nombre + ", genero=" + genero + ", coste=" + coste + "]";

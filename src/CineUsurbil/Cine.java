@@ -1,6 +1,5 @@
 package CineUsurbil;
 
-import java.util.Arrays;
 
 import javafx.beans.property.SimpleStringProperty;
 
@@ -8,15 +7,21 @@ public class Cine {
 
     private SimpleStringProperty codCine;
     private Sala [] sala;
-    private String nombre;
-    /*constructor*/    
+    private SimpleStringProperty nombre;
+    
+
+    public Cine (String codCine, String nombre){
+        this.codCine = new SimpleStringProperty(codCine);
+        this.nombre = new SimpleStringProperty(nombre);
+
+    }
   
     public String getNombre() {
-        return nombre;
+        return nombre.get();
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.nombre.set(nombre);
     }
 
     public Cine(String codCine, Sala[] sala){
@@ -25,19 +30,8 @@ public class Cine {
     }
     
     public Cine(String codCine){
-        this.codCine = new SimpleStringProperty(codCine);        
+        this.codCine = new SimpleStringProperty(codCine);     
     } 
-        
-    public Cine(String codCine,String nombre){
-        this.codCine = new SimpleStringProperty(codCine);
-        this.nombre=nombre;
-    }   
-
-    
-    @Override
-    public String toString() {
-        return "Cine [codCine=" + codCine + ", sala=" + Arrays.toString(sala) + "]";
-    }
 
     public String getCodCine() {
         return codCine.get();
