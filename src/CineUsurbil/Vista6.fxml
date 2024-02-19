@@ -17,7 +17,7 @@
       <Label fx:id="labelDni" layoutX="166.0" layoutY="154.0" text="DNI  :">
          <font>
             <Font size="15.0" />
-         </font>
+         </font>      
       </Label>
       <Label fx:id="labelContraseña" layoutX="163.0" layoutY="224.0" text="Contraseña  :">
          <font>
@@ -25,9 +25,10 @@
          </font>
       </Label>
       <TextField fx:id="dni" layoutX="272.0" layoutY="152.0" />
+      <PasswordField fx:id="contraseña" layoutX="273.0" layoutY="220.0" />
       <Button fx:id="login" layoutX="277.0" layoutY="350.0" mnemonicParsing="false" onAction="#login" text="Login" />
       <Button fx:id="atras" layoutX="111.0" layoutY="350.0" mnemonicParsing="false" onAction="#atras" text="Atrás" />
       <Button fx:id="registrarse" layoutX="439.0" layoutY="350.0" mnemonicParsing="false" onAction="#registrarse" text="Registrarse" />
-      <PasswordField fx:id="contraseña" layoutX="273.0" layoutY="220.0" />
+
    </children>
 </AnchorPane>

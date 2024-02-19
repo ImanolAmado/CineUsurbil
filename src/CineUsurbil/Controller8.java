@@ -7,6 +7,8 @@ import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.ResourceBundle;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import javafx.animation.PauseTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,6 +19,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.util.Duration;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.File;
+import java.io.IOException;
 
 public class Controller8 implements Initializable {
 
@@ -32,7 +39,12 @@ public class Controller8 implements Initializable {
     java.sql.Date fechaSistema = new java.sql.Date(new java.util.Date().getTime());
    
     private SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
-    private String fechaConFormato = formatter.format(fechaSistema);  
+    private String fechaConFormato = formatter.format(fechaSistema); 
+
+    DateTimeFormatter horaFormateada = DateTimeFormatter.ofPattern("HH:mm");
+    String hora = new String (LocalTime.now().format(horaFormateada));
+
+
 
     LocalTime hora = LocalTime.now();
         
@@ -71,7 +83,29 @@ public class Controller8 implements Initializable {
 
     @FXML
     void imprimir(ActionEvent event) throws IOException {
+         creacionFichero();
+    }
 
+    public void creacionFichero() {
+            String ruta = ".";
+            String mensaje = "Fecha: " + fechaConFormato + " Hora: " + hora;
+            String mensaje2 = cliente.toString();
+
+            try{
+                BufferedWriter ficheroEscritura = new BufferedWriter(new FileWriter(ruta+"Entrada.txt"));
+                ficheroEscritura.write(mensaje + "\n");
+                ficheroEscritura.write(mensaje2 + "\n");
+                for(int i = 0; i<Controller5.itemsCarrito;i++){
+                    ficheroEscritura.write(Controller4.carritoCompra[i].toString() + "\n");
+                }
+                ficheroEscritura.close();
+
+                Alertas.alertaFichero();
+            }catch(IOException e) {
+                Alertas.alertaFicheroNoGuardado();
+                    // TODO Auto-generated catch block
+            e.printStackTrace();
+            }
     }
 
     @FXML
