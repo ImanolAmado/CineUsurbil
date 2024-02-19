@@ -112,5 +112,21 @@ public class Alertas {
         alert.showAndWait();
     }
 
+    public static void alertaFichero(){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setHeaderText(null);
+        alert.setTitle("Guardar fichero");
+        alert.setContentText("El archivo se ha guardado correctamente.");
+        alert.showAndWait();
+    }
+
+    public static void alertaFicheroNoGuardado(){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setHeaderText(null);
+        alert.setTitle("Fichero no guardado");
+        alert.setContentText("El archivo no se ha guardado correctamente.");
+        alert.showAndWait();
+    }
+
 
 }
