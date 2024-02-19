@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class SesionDao {    
 
-    private static final String SESIONES = "SELECT codCine, codPelicula, codSala, nombreSala, fecha, hora, precioSesion FROM salapelicula "
+    private static final String SESIONES = "SELECT codSesion, codCine, codPelicula, codSala, nombreSala, fecha, hora, precioSesion FROM salapelicula "
     + "NATURAL JOIN sala where codPelicula=? AND CodCine=? ORDER BY fecha";      
 
     // Lo usamos en el controller 4, buscamos las sesiones disponibles de la
@@ -26,7 +26,7 @@ public class SesionDao {
         ResultSet rset = pstmt.executeQuery();
 
         while (rset.next()) {
-            Sesion sesion = new Sesion(rset.getString("codCine"), rset.getInt("codPelicula"),
+            Sesion sesion = new Sesion(rset.getInt("codSesion"),rset.getString("codCine"), rset.getInt("codPelicula"),
                     rset.getString("codSala"), rset.getString("nombreSala"),
                     rset.getDate("fecha"), rset.getTime("hora"), rset.getDouble("precioSesion"));
             sesionesDisponibles[contador] = sesion;

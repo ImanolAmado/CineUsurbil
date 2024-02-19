@@ -50,5 +50,12 @@ public class ConectorBBDD {
         ClienteDao clienteDao = new ClienteDao();
 		return clienteDao;
 	}
+
+	public static EntradasDao getEntradasDao(){
+		EntradasDao entradasDao = new EntradasDao();
+		return entradasDao;
+	}
+
+	
 	
 }
