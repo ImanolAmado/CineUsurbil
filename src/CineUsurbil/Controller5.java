@@ -32,7 +32,7 @@ public class Controller5 implements Initializable {
         private Button vaciar;
 
         @FXML
-        private Button login;
+        private Button finalizar;
 
         @FXML
         private TextField contraseña;
@@ -89,10 +89,13 @@ public class Controller5 implements Initializable {
                 }
         }
 
+      
         @FXML
-        void login(ActionEvent event) {
-
+        void finalizar(ActionEvent event) throws IOException {
+                App.setRoot("vista6");   
         }
+    
+
 
         @FXML
         public void initialize(URL location, ResourceBundle resources) {

@@ -8,11 +8,12 @@
 
 <AnchorPane fx:id="Registrarse" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CineUsurbil.Controller7">
    <children>
-      <Label layoutX="41.0" layoutY="77.0" prefHeight="18.0" prefWidth="60.0" text="Nombre:" />
-      <Label layoutX="41.0" layoutY="166.0" text="DNI:" />
-      <Label layoutX="38.0" layoutY="209.0" text="E-mail:" />
-      <Label layoutX="37.0" layoutY="252.0" text="Sexo:" />
-      <Label layoutX="34.0" layoutY="295.0" text="Contraseña:" />
+      <Label fx:id="labelNombre" layoutX="41.0" layoutY="77.0" prefHeight="18.0" prefWidth="60.0" text="Nombre:" />
+      <Label fx:id="labelDni" layoutX="41.0" layoutY="166.0" text="DNI:" />
+      <Label fx:id="labelEmail" layoutX="38.0" layoutY="209.0" text="E-mail:" />
+      <Label fx:id="labelSexo" layoutX="37.0" layoutY="252.0" text="Sexo:" />
+      <Label fx:id="labelContraseña" layoutX="34.0" layoutY="295.0" text="Contraseña:" />
+      <Label fx:id="labelApellidos" layoutX="39.0" layoutY="121.0" text="Apellidos:" />
       <TextField fx:id="nombre" layoutX="113.0" layoutY="76.0" />
       <TextField fx:id="apellidos" layoutX="113.0" layoutY="120.0" />
       <TextField fx:id="dni" layoutX="113.0" layoutY="163.0" />
@@ -23,9 +24,8 @@
          <font>
             <Font name="System Italic" size="20.0" />
          </font>
-      </Label>
-      <Label layoutX="39.0" layoutY="121.0" text="Apellidos:" />
-      <Button fx:id="NoReg" layoutX="331.0" layoutY="352.0" mnemonicParsing="false" onAction="#noreg" text="No Registrarse" />
-      <Button fx:id="Reg" layoutX="459.0" layoutY="352.0" mnemonicParsing="false" onAction="#registrar" prefHeight="18.0" prefWidth="103.0" text="Registrarse" />
+      </Label>      
+      <Button fx:id="atras" layoutX="384.0" layoutY="351.0" mnemonicParsing="false" onAction="#atras" prefHeight="26.0" prefWidth="52.0" text="Atrás" />
+      <Button fx:id="registrarse" layoutX="459.0" layoutY="352.0" mnemonicParsing="false" onAction="#registrarse" prefHeight="18.0" prefWidth="103.0" text="Registrarse" />
    </children>
 </AnchorPane>
