@@ -13,7 +13,6 @@ public class Cine {
     public Cine (String codCine, String nombre){
         this.codCine = new SimpleStringProperty(codCine);
         this.nombre = new SimpleStringProperty(nombre);
-
     }
   
     public String getNombre() {

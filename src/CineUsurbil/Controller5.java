@@ -93,7 +93,12 @@ public class Controller5 implements Initializable {
       
         @FXML
         void finalizar(ActionEvent event) throws IOException {
-                App.setRoot("vista6");   
+
+        // Antes de proceder al "checkout", miramos si el carrito está vacío
+
+                if (Controller4.carritoCompra[0]==null){
+                        Alertas.alertaCarritoVacio();
+                } else  App.setRoot("vista6");   
         }
     
 
@@ -141,8 +146,7 @@ public class Controller5 implements Initializable {
 
                         facturaTotal = sumaCompra - (sumaCompra * descuentoTotal / 100);
                         texto = String.valueOf(facturaTotal) + "€";
-                        total.setText(texto);                       
-
+                        total.setText(texto);                   
 
                 });
                 pause.play();

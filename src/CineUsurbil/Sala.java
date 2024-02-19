@@ -1,6 +1,5 @@
 package CineUsurbil;
 
-import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Sala {
@@ -55,22 +54,5 @@ public class Sala {
 
     public void setNombre(String nombre) {
         this.nombre.set(nombre);
-    }
-
-    public String getGenero() {
-        return genero.get();
-    }
-
-    public void setGenero(String genero) {
-        this.genero.set(genero);
-    }
-
-    public double getCoste() {
-        return coste.get();// está bien?
-    }
-
-    public void setCoste(double coste) {
-        this.coste.set(coste);
-    }
-
+    }    
 }

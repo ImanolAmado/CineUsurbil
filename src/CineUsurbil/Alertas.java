@@ -128,5 +128,12 @@ public class Alertas {
         alert.showAndWait();
     }
 
+    public static void alertaCarritoVacio(){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setHeaderText(null);
+        alert.setTitle("Carrito Vacio");
+        alert.setContentText("¡Error! El carrito está vacío");
+        alert.showAndWait();
+    }
 
 }

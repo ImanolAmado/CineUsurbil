@@ -3,11 +3,10 @@ package CineUsurbil;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.sql.Time;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ResourceBundle;
-import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import javafx.animation.PauseTransition;
 import javafx.collections.FXCollections;
@@ -19,11 +18,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.util.Duration;
-
 import java.io.BufferedWriter;
 import java.io.FileWriter;
-import java.io.File;
-import java.io.IOException;
+
 
 public class Controller8 implements Initializable {
 
@@ -33,7 +30,7 @@ public class Controller8 implements Initializable {
 // Creamos una variable de tipo Date para capturar
 // fecha actual. Le damos formato para que sea más 
 // legible en pantalla.
-// Además, lo transformamos en el tipo "Date" del paquete SQL
+// Además, lo transformamos en el tipo "Date" de SQL
 // para insertarlo en la BBDD sin problemas.
 
     java.sql.Date fechaSistema = new java.sql.Date(new java.util.Date().getTime());
@@ -42,12 +39,7 @@ public class Controller8 implements Initializable {
     private String fechaConFormato = formatter.format(fechaSistema); 
 
     DateTimeFormatter horaFormateada = DateTimeFormatter.ofPattern("HH:mm");
-    String hora = new String (LocalTime.now().format(horaFormateada));
-
-
-
-    LocalTime hora = LocalTime.now();
-        
+    String hora = new String (LocalTime.now().format(horaFormateada));       
     
 
     @FXML
@@ -82,17 +74,20 @@ public class Controller8 implements Initializable {
 
 
     @FXML
-    void imprimir(ActionEvent event) throws IOException {
-         creacionFichero();
-    }
-
-    public void creacionFichero() {
+    void imprimir(ActionEvent event) throws IOException {         
+            
             String ruta = ".";
             String mensaje = "Fecha: " + fechaConFormato + " Hora: " + hora;
             String mensaje2 = cliente.toString();
 
+            // Cogemos fecha y hora actual para crear ficheros
+            // con nombre únicos.
+
+            DateTimeFormatter horaFormateada = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+            String nombreFichero = new String (LocalDateTime.now().format(horaFormateada));
+
             try{
-                BufferedWriter ficheroEscritura = new BufferedWriter(new FileWriter(ruta+"Entrada.txt"));
+                BufferedWriter ficheroEscritura = new BufferedWriter(new FileWriter(ruta+"Entrada" + nombreFichero + ".txt"));
                 ficheroEscritura.write(mensaje + "\n");
                 ficheroEscritura.write(mensaje2 + "\n");
                 for(int i = 0; i<Controller5.itemsCarrito;i++){
@@ -102,8 +97,7 @@ public class Controller8 implements Initializable {
 
                 Alertas.alertaFichero();
             }catch(IOException e) {
-                Alertas.alertaFicheroNoGuardado();
-                    // TODO Auto-generated catch block
+                Alertas.alertaFicheroNoGuardado();                   
             e.printStackTrace();
             }
     }
@@ -178,5 +172,3 @@ public class Controller8 implements Initializable {
     }
 
 }
-
-

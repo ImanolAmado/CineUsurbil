@@ -1,23 +1,18 @@
 package CineUsurbil;
 
 import java.io.IOException;
-import java.net.URL;
 import java.sql.SQLException;
-import java.util.ResourceBundle;
-
-import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.util.Duration;
 
-public class Controller6 implements Initializable{
+
+public class Controller6 {
 
     @FXML
     private Button atras;   
@@ -45,7 +40,7 @@ public class Controller6 implements Initializable{
 
     @FXML
     void atras(ActionEvent event)throws IOException {
-        App.setRoot("vista1");
+        App.setRoot("vista5");
 
     }
 
@@ -82,14 +77,6 @@ public class Controller6 implements Initializable{
     } 
 }
 
-        @FXML
-        public void initialize(URL location, ResourceBundle resources) {
-            PauseTransition pause = new PauseTransition(Duration.seconds(0.1));
-
-        pause.setOnFinished(event -> {
-        });
-        pause.play();
-        }
 
     @FXML
     void registrarse(ActionEvent event) throws IOException{

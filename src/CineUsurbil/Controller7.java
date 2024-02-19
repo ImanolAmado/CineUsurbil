@@ -72,138 +72,27 @@ public class Controller7 implements Initializable {
     private Label labelContraseña;
 
     @FXML
-    private Label labelEmail;
-
-    // Validamos que los campos de nombre y apellidos tengan una
-    // largura inferior a 100 carácteres (y superior a 1), que es el tamaño que
-    // tenemos en la BBDD para esos campos.
-
-    @FXML
-    private boolean validarNombreApellido(String largo) {
-
-        if (largo.length() <= 1 || largo.length() > 100) {
-            return false;
-        }
-        return true;
-
-    }
-
-    // Deberíamos implementar algún tipo de verificación de email antes de introducir
-    // los datos en la BBDD. De momento, nos conformamos con exigir una largura de al menos
-    // 8 carácteres y que sea inferior a 100. Para la contraseña usamos el mismo método
-
-    @FXML
-    private boolean validarLargo(String largo) {
-
-        if (largo.length() <=8  || largo.length() > 100) {
-            return false;
-        }
-        return true;
-
-    }
-
-
-    // Validamos que nos pasan un DNI válido. Va a ser "primary key"
-    // en nuestra BBDD por lo que es importante que el DNI sea correcto.
-
-    public boolean validarDNI(String dniNumero) {
-
-        String dniSinLetra;
-        String letraDni;
-        int numero;
-
-        final String[] CODIGOCONTROL = { "T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S",
-                "Q",
-                "V", "H", "L", "C", "K", "E" };
-
-        if (dniNumero.length() != 9) {
-            return false;
-        }
-
-        dniSinLetra = dniNumero.substring(0, 8);
-        letraDni = dniNumero.substring(8, 9);
-
-        try {
-            numero = Integer.valueOf(dniSinLetra);
-        } catch (NumberFormatException e) {
-            return false;
-        }
-
-        numero = numero % 23;
-
-        if (numero > 22 || numero < 0) {
-            return false;
-        } else if (CODIGOCONTROL[numero].equalsIgnoreCase(letraDni)) {
-            return true;
-        } else
-            return false;
-    }
-
-
-    // Si el DNI es válido, necesitamos saber si ya existe en nuestra BBDD.
-    // No podemos tener 2 parámetros de DNI iguales puesto que es "primary key".
-
-    public boolean dniExistente() {
-        ClienteDao clienteDao = ConectorBBDD.getClienteDao();
-
-        try {
-            if (!clienteDao.buscarDNI(dni.getText())) {              
-                dniCliente = dni.getText();
-                return false;
-            }
-
-            else {                         
-                dni.clear();
-                dniCliente = null;               
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }  return true;
-  
-    }
-
-    // En nuestra BBDD, email es "unique" por lo que tenemos que asegurarnos
-    // de que no existe.
-
-    public boolean emailExistente() {
-        ClienteDao clienteDao = ConectorBBDD.getClienteDao();
-
-        try {
-            if (!clienteDao.buscarEmail(email.getText())) {               
-                emailCliente = email.getText();
-                return false;
-            }
-
-            else {                            
-                email.clear();
-                email2.clear();
-                emailCliente = null;               
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }  return true;
-  
-    }
+    private Label labelEmail;      
+      
     
-
     // Al registrarnos y pulsar el botón de "registrarse", empezamos a
-    // validar los datos introducidos.
+    // validar los datos introducidos. Hemos creado una clase llamada
+    // "ValidarDatos" para que este controller no engorde demasiado.
 
     @FXML
     void registrarse(ActionEvent event) throws IOException {
 
+
         // Validamos nombre y apellido
 
-        if (validarNombreApellido(nombre.getText())) {
+        if (ValidarDatos.validarNombreApellido(nombre.getText())) {
             nombreCliente = nombre.getText();
         } else {
             nombre.clear();
             nombreCliente = null;
         }
 
-        if (validarNombreApellido(apellidos.getText())) {
+        if (ValidarDatos.validarNombreApellido(apellidos.getText())) {
             apellidosCliente = apellidos.getText();
         } else {
             apellidos.clear();
@@ -213,10 +102,14 @@ public class Controller7 implements Initializable {
         // Validamos si el formato del DNI es correcto y luego
         // comprobamos si ya existe en nuestra BBDD
 
-        if (validarDNI(dni.getText())) {           
-            if(dniExistente()){
+        if (ValidarDatos.validarDNI(dni.getText())) {           
+            if(ValidarDatos.dniExistente(dni.getText())){
                 Alertas.alertaUsuarioExiste();
-            }             
+                dni.clear();
+                dniCliente = null;     
+               
+            }  else dniCliente = dni.getText();
+                       
         } else {         
             dni.clear();
             dniCliente = null;
@@ -225,12 +118,15 @@ public class Controller7 implements Initializable {
         // Validamos largura del e-mail y si el usuario lo ha introducido
         // 2 veces de manera correcta. Miramos en la BBDD si existe el email introducido.
         
-
-        if (email.getText().equals(email2.getText()) && validarLargo(email.getText())) {
+        if (email.getText().equals(email2.getText()) && ValidarDatos.validarLargo(email.getText())) {
           
-            if(emailExistente()){                
+            if(ValidarDatos.emailExistente(email.getText())){                
                 Alertas.alertaEmailExiste();
-            }          
+                email.clear();
+                email2.clear();
+                emailCliente = null;
+
+            } else emailCliente = email.getText();     
        
         } else {
             email.clear();
@@ -238,11 +134,12 @@ public class Controller7 implements Initializable {
             emailCliente = null;
         }
 
+        // Puesto que es una ComboBox, no necesitamos validar el sexo.
         sexoCliente = lista.getValue();
 
         // Verificamos que el largo de la contraseña sea superior a 8 e inferior a 100 
     
-        if (validarLargo(contraseña.getText())){
+        if (ValidarDatos.validarLargo(contraseña.getText())){
             contraseñaCliente=contraseña.getText();
         } else {
             contraseña.clear();
@@ -275,7 +172,6 @@ public class Controller7 implements Initializable {
             controller.cargarCliente(nuevoUsuario);
             Scene s = ((Button) event.getSource()).getScene();
             s.setRoot(parent);
-
 
         } else Alertas.alertaVerificaDatos();        
 

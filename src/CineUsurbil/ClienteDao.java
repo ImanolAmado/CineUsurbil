@@ -15,7 +15,7 @@ public class ClienteDao {
     private static final String EMAIL = "SELECT email FROM cliente WHERE email=?";
 
     private static final String INSERTAR = "INSERT INTO cliente (dni, nombre, apellido, sexo, contraseña, email) VALUES " +
-    "( ?, ?, ?, ?, ?, ?)";
+    "(?, ?, ?, ?, ?, ?)";
 
 
     public Cliente leerCliente(String dni, String contraseña) throws SQLException {

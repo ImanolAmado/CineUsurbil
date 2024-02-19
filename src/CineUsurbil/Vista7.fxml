@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="Registrarse" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" 
-xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CineUsurbil.Controller7">
+<AnchorPane fx:id="Registrarse" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CineUsurbil.Controller7">
    <children>
       <Label fx:id="labelNombre" layoutX="41.0" layoutY="113.0" prefHeight="18.0" prefWidth="60.0" text="Nombre:" />
       <Label fx:id="labelDni" layoutX="52.0" layoutY="191.0" text="DNI:" />
@@ -33,5 +32,6 @@ xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:contr
       
       <ComboBox fx:id="lista" layoutX="112.0" layoutY="226.0" prefWidth="150.0" />
       <PasswordField fx:id="contraseña" layoutX="392.0" layoutY="187.0" />
+      <Label layoutX="392.0" layoutY="217.0" text="*Mínimo 8 caracteres" />
    </children>
 </AnchorPane>
