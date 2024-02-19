@@ -99,7 +99,7 @@ public class Alertas {
     public static void usuarioContraseñaIncorrectos() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setHeaderText(null);
-        alert.setTitle("contraseña error");
+        alert.setTitle("Usuario y contraseña incorrectos");
         alert.setContentText("¡Error! El usuario o la contraseña no es correcta.");
         alert.showAndWait();
     }
@@ -107,7 +107,7 @@ public class Alertas {
     public static void camposVacios() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setHeaderText(null);
-        alert.setTitle("contraseña error");
+        alert.setTitle("Campos vacios");
         alert.setContentText("Por favor, rellene todos los campos.");
         alert.showAndWait();
     }

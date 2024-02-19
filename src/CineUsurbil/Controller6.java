@@ -62,7 +62,7 @@ public class Controller6 implements Initializable{
     ClienteDao clienteDao = ConectorBBDD.getClienteDao();
 
     try {
-        Cliente cliente = clienteDao.leerCliente(dniText, contraseñaText);//aquí pasa la información ingresada en los textfield al objeto que hemos creado "cliente" qie se conecta con la BBDD que creamos
+        Cliente cliente = clienteDao.leerCliente(dniText, contraseñaText);//aquí pasa la información ingresada en los textfield al objeto que hemos creado "cliente" que se conecta con la BBDD que creamos
                       
         if(cliente==null){
             Alertas.usuarioContraseñaIncorrectos();
