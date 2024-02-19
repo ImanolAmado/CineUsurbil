@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CineUsurbil.Controller8">
+   <children>
+      <Label layoutX="100.0" layoutY="14.0" prefHeight="55.0" prefWidth="419.0" text="¡Gracias! Compra realizada con éxito">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="99.0" layoutY="89.0" prefHeight="25.0" prefWidth="57.0" text="Cliente: ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="emailCliente" layoutX="99.0" layoutY="140.0" prefHeight="25.0" prefWidth="57.0" text="Email: ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ListView fx:id="lista" layoutX="59.0" layoutY="186.0" prefHeight="108.0" prefWidth="488.0" />
+      <Label layoutX="99.0" layoutY="120.0" prefHeight="17.0" prefWidth="57.0" text="Nombre:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="dniCliente" layoutX="157.0" layoutY="92.0" prefHeight="17.0" prefWidth="133.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="nombreCliente" layoutX="166.0" layoutY="120.0" prefHeight="17.0" prefWidth="133.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="nombreEmail" layoutX="143.0" layoutY="143.0" prefHeight="17.0" prefWidth="133.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="imprimir" layoutX="347.0" layoutY="328.0" mnemonicParsing="false" onAction="#imprimir" prefHeight="34.0" prefWidth="98.0" text="Imprimir ticket" />
+      <Button fx:id="inicio" layoutX="166.0" layoutY="328.0" mnemonicParsing="false" onAction="#inicio" prefHeight="34.0" prefWidth="87.0" text="Inicio" />
+      <Label layoutX="347.0" layoutY="89.0" prefHeight="26.0" prefWidth="46.0" text="Fecha:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="347.0" layoutY="117.0" prefHeight="26.0" prefWidth="87.0" text="Total compra:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="fecha" layoutX="396.0" layoutY="92.0" prefHeight="20.0" prefWidth="98.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="totalCompra" layoutX="445.0" layoutY="120.0" prefHeight="20.0" prefWidth="75.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

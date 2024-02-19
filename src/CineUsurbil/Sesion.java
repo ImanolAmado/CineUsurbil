@@ -2,13 +2,13 @@ package CineUsurbil;
 
 import java.sql.Date;
 import java.sql.Time;
-
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Sesion {
 
+    private SimpleIntegerProperty codSesion;
     private SimpleStringProperty codCine;
     private SimpleIntegerProperty codPelicula;
     private SimpleStringProperty codSala;   
@@ -19,7 +19,8 @@ public class Sesion {
 
     // Constructores
 
-    public Sesion(String codCine, int codPelicula, String codSala, String nombreSala, Date fecha, Time hora, double precio){
+    public Sesion(int codSesion, String codCine, int codPelicula, String codSala, String nombreSala, Date fecha, Time hora, double precio){
+        this.codSesion= new SimpleIntegerProperty(codSesion);
         this.codCine = new SimpleStringProperty(codCine);
         this.codPelicula = new SimpleIntegerProperty(codPelicula);
         this.codSala = new SimpleStringProperty(codSala);  
@@ -29,7 +30,14 @@ public class Sesion {
         this.precio = new SimpleDoubleProperty(precio);
     }
               
-    
+    public int getCodSesion(){
+        return codSesion.get();
+    }
+
+    public void setCodSesion(int codSesion){
+        this.codSesion.set(codSesion);   
+    }
+        
     public String getCodCine() {
         return codCine.get();
     }

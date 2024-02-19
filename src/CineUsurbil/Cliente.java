@@ -1,7 +1,5 @@
 package CineUsurbil;
 
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Cliente {
@@ -9,18 +7,27 @@ public class Cliente {
     private SimpleStringProperty dni;
     private SimpleStringProperty nombre;
     private SimpleStringProperty apellidos;
-    private SimpleBooleanProperty sexo;
-    private SimpleIntegerProperty contraseña;
+    private SimpleStringProperty email;
+    private SimpleStringProperty sexo;
+    private SimpleStringProperty contraseña;
 
 
-    public Cliente(String dni, String nombre , String apellidos , boolean sexo , int contraseña){
+    public Cliente(String dni, String nombre , String apellidos , String email, String sexo , String contraseña){
     this.dni = new SimpleStringProperty(dni);
     this.nombre = new SimpleStringProperty(nombre);
     this.apellidos = new SimpleStringProperty(apellidos);
-    this.sexo = new SimpleBooleanProperty(sexo);
-    this.contraseña = new SimpleIntegerProperty(contraseña);
+    this.email = new SimpleStringProperty(email);
+    this.sexo = new SimpleStringProperty(sexo);
+    this.contraseña = new SimpleStringProperty(contraseña);
     }
 
+    public Cliente(String dni, String nombre , String apellidos , String email){
+        this.dni = new SimpleStringProperty(dni);
+        this.nombre = new SimpleStringProperty(nombre);
+        this.apellidos = new SimpleStringProperty(apellidos);
+        this.email = new SimpleStringProperty(email);        
+        }
+      
 
     @Override
     public String toString() {
@@ -36,7 +43,6 @@ public class Cliente {
     public void setDni(String dni){
         this.dni.set(dni);
     }
-
 
     public String getNombre() {
         return nombre.get();
@@ -54,23 +60,32 @@ public class Cliente {
         this.apellidos.set(apellidos);
     }
 
-    public boolean isSexo() {
+    public String getSexo() {
         return sexo.get();
-    }//Esto está bién?
+    }
 
 
-    public void setSexo(boolean sexo) {
+    public void setSexo(String sexo) {
         this.sexo.set(sexo);
     }
 
 
-    public int getContraseña() {
+    public String getContraseña() {
         return contraseña.get();
     }
 
 
-    public void setContraseña(int contraseña) {
+    public void setContraseña(String contraseña) {
         this.contraseña.set(contraseña);
     }    
+ 
+
+    public String getEmail() {
+        return email.get();
+    }
+
+    public void setEmail(String email) {
+        this.email.set(email);
+    }
     
 }

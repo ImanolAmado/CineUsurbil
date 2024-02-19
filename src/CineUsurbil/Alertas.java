@@ -72,4 +72,45 @@ public class Alertas {
         return false;       
     }
 
+    public static void alertaUsuarioExiste() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setHeaderText(null);
+        alert.setTitle("Usuario ya registrado");
+        alert.setContentText("¡Error! Ese DNI pertenece a un usuario ya existente");
+        alert.showAndWait();
+    }
+
+    public static void alertaVerificaDatos() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setHeaderText(null);
+        alert.setTitle("Verifica datos");
+        alert.setContentText("¡Error! Verifica los datos introducidos");
+        alert.showAndWait();
+    }
+
+    public static void alertaEmailExiste() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setHeaderText(null);
+        alert.setTitle("Email ya existe");
+        alert.setContentText("¡Error! Email ya registrado");
+        alert.showAndWait();
+    }
+
+    public static void usuarioContraseñaIncorrectos() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setHeaderText(null);
+        alert.setTitle("contraseña error");
+        alert.setContentText("¡Error! El usuario o la contraseña no es correcta.");
+        alert.showAndWait();
+    }
+
+    public static void camposVacios() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setHeaderText(null);
+        alert.setTitle("contraseña error");
+        alert.setContentText("Por favor, rellene todos los campos.");
+        alert.showAndWait();
+    }
+
+
 }

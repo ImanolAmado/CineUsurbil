@@ -20,9 +20,10 @@ public class Controller5 implements Initializable {
         // Usaremos estas variables para sumar el precio de las sesiones compradas,
         // para calcular el descuento y para mostrar el importe final a pagar
 
-        private double sumaCompra =0;
-        private int descuentoTotal = 0;
-        private double facturaTotal =0;
+        public static double facturaTotal=0;
+        public static int itemsCarrito=0;
+        private double sumaCompra=0;
+        private int descuentoTotal=0;    
         private String texto;
 
         @FXML
@@ -32,7 +33,7 @@ public class Controller5 implements Initializable {
         private Button vaciar;
 
         @FXML
-        private Button login;
+        private Button finalizar;
 
         @FXML
         private TextField contraseña;
@@ -89,10 +90,13 @@ public class Controller5 implements Initializable {
                 }
         }
 
+      
         @FXML
-        void login(ActionEvent event) {
-
+        void finalizar(ActionEvent event) throws IOException {
+                App.setRoot("vista6");   
         }
+    
+
 
         @FXML
         public void initialize(URL location, ResourceBundle resources) {
@@ -125,6 +129,7 @@ public class Controller5 implements Initializable {
                         texto = String.valueOf(sumaCompra) + "€";
                         subtotal.setText(texto);
 
+                        itemsCarrito = descuentoTotal;                       
                         descuentoTotal = descuentoTotal * 10;
 
                         if (descuentoTotal > 50) {
@@ -136,10 +141,10 @@ public class Controller5 implements Initializable {
 
                         facturaTotal = sumaCompra - (sumaCompra * descuentoTotal / 100);
                         texto = String.valueOf(facturaTotal) + "€";
-                        total.setText(texto);
+                        total.setText(texto);                       
+
 
                 });
                 pause.play();
         }
-
 }
