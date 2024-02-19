@@ -8,9 +8,7 @@ public class Sala {
     private SimpleStringProperty codCine;
     private SimpleStringProperty codSala;
     private SimpleStringProperty nombre;
-    private SimpleStringProperty genero;
-    private SimpleDoubleProperty coste;
-
+   
     // Constructores
 
     public Sala(String codCine, String codSala, String nombre, String genero, double coste) {
@@ -18,8 +16,6 @@ public class Sala {
         this.codCine = new SimpleStringProperty(codCine);
         this.codSala = new SimpleStringProperty(codSala);
         this.nombre = new SimpleStringProperty(nombre);
-        this.genero = new SimpleStringProperty(genero);
-        this.coste = new SimpleDoubleProperty(coste);
     }
 
     public Sala(String codSala) {
@@ -34,7 +30,7 @@ public class Sala {
 
     @Override
     public String toString() {
-        return "Salas [codSala=" + codSala + ", nombre=" + nombre + ", genero=" + genero + ", coste=" + coste + "]";
+        return "Salas [codSala=" + codSala + ", nombre=" + nombre + "]";
     }
 
     public String getCodCine() {

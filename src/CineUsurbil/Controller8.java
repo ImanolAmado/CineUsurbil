@@ -3,7 +3,9 @@ package CineUsurbil;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.sql.Time;
 import java.text.SimpleDateFormat;
+import java.time.LocalTime;
 import java.util.ResourceBundle;
 import javafx.animation.PauseTransition;
 import javafx.collections.FXCollections;
@@ -31,6 +33,10 @@ public class Controller8 implements Initializable {
    
     private SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
     private String fechaConFormato = formatter.format(fechaSistema);  
+
+    LocalTime hora = LocalTime.now();
+        
+    
 
     @FXML
     private Button imprimir;
@@ -101,7 +107,7 @@ public class Controller8 implements Initializable {
             nombreCliente.setText(cliente.getNombre() + " " + cliente.getApellidos());
             nombreEmail.setText(cliente.getEmail());
             fecha.setText(fechaConFormato);           
-            totalCompra.setText(String.valueOf(Controller5.facturaTotal));
+            totalCompra.setText(String.valueOf(Controller5.facturaTotal) + "€");
 
             // Dividimos factura total por el número de items en el carrito.
             // Actualizamos los precios que tenemos guardados en el carrito para insertarlos
@@ -121,9 +127,8 @@ public class Controller8 implements Initializable {
             for (int i = 0; i < Controller5.itemsCarrito; i++) {                  
                     listaObservable.add(Controller4.carritoCompra[i].toString());               
             }
-
-            lista.setItems(listaObservable);
-
+            
+            lista.setItems(listaObservable);            
     
             EntradasDao entradasDao = ConectorBBDD.getEntradasDao();
             try {
@@ -139,3 +144,5 @@ public class Controller8 implements Initializable {
     }
 
 }
+
+
