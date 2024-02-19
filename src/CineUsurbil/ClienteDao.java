@@ -22,9 +22,9 @@ public class ClienteDao {
         Cliente cl=null;
         Connection c = ConectorBBDD.conectar();               
         PreparedStatement pstmt = c.prepareStatement(USUPASS);
+        ResultSet rset = pstmt.executeQuery();
         pstmt.setString(1, dni);
         pstmt.setString(2, contraseña);
-        ResultSet rset = pstmt.executeQuery();
 
             while (rset.next()) {
                 
