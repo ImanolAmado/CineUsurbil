@@ -32,7 +32,7 @@ public class ClienteDao {
                 
             }  
             pstmt.close();
-            c.close();              
+            c.close();                    
             return cl;
     }
 

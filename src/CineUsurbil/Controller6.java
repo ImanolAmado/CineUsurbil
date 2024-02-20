@@ -48,6 +48,7 @@ public class Controller6 {
     void login(ActionEvent event) throws IOException{
         String dniText = dni.getText(); //obtiene la inforamción ingresada en textfield de dni
         String contraseñaText = contraseña.getText(); //obtiene la inforamción ingresada en textfield de contraseña
+        contraseñaText = Encrypt.encryptPassword(contraseñaText);
         
         if (dniText.isEmpty() || contraseñaText.isEmpty()) {
             // Campos vacíos, muestra un mensaje de error.

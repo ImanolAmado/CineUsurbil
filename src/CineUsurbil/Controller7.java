@@ -141,6 +141,8 @@ public class Controller7 implements Initializable {
     
         if (ValidarDatos.validarLargo(contraseña.getText())){
             contraseñaCliente=contraseña.getText();
+            contraseñaCliente = Encrypt.encryptPassword(contraseñaCliente);
+        
         } else {
             contraseña.clear();
             contraseñaCliente=null;               
