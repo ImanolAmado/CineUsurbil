@@ -1,3 +1,6 @@
+// Script para encriptar todas las contraseñas
+// que tenemos en la BBDD.
+
 package CineUsurbil;
 
 import java.sql.DriverManager;
