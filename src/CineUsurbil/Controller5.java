@@ -98,6 +98,7 @@ public class Controller5 implements Initializable {
 
                 if (Controller4.carritoCompra[0]==null){
                         Alertas.alertaCarritoVacio();
+                        App.setRoot("vista2");
                 } else  App.setRoot("vista6");   
         }
     
