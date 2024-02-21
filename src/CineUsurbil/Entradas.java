@@ -45,6 +45,7 @@ public class Entradas {
         + sesion.getHora() + " - " + sesion.getNombreSala() + " - " + sesion.getPrecio() +"€";  
     }      
     
+
     public String mostrarEntrada(){
         return cine.getNombre() + " - " + pelicula.getTitulo() + " - " + sesion.getFecha() + " - "
         + sesion.getHora() + " - " + sesion.getNombreSala() + " - " + sesion.getPrecio() +"€";  

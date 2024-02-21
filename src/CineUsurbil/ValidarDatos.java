@@ -4,8 +4,7 @@ import java.sql.SQLException;
 
 public class ValidarDatos {
 
-// Validamos que nos pasan un DNI válido. Va a ser "primary key"
-// en nuestra BBDD por lo que es importante que el DNI sea correcto.
+// Validamos que nos pasan un DNI válido. 
 
     public static boolean validarDNI(String dniNumero) {
 
@@ -70,7 +69,7 @@ public class ValidarDatos {
     }   
 
     // Si el DNI es válido, necesitamos saber si ya existe en nuestra BBDD.
-    // No podemos tener 2 parámetros de DNI iguales puesto que es "primary key".
+    // No podemos tener 2 DNI iguales puesto que es "primary key".
 
     public static boolean dniExistente(String dni) {
         ClienteDao clienteDao = ConectorBBDD.getClienteDao();

@@ -1,7 +1,10 @@
 package CineUsurbil;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+
+// Función para encriptar contraseñas
 
 public class Encrypt {
 
